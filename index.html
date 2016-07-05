@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="day.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="day.css">
+    <!-- default stylesheet -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/test.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/jscolor.js"></script>
+    <title>pIOT project</title>
+</head>
+
+<body>
+    <button type="button" id="jstrigger" onclick="javascript:test();">Submit</button>
+    <h1 onclick="javascript:hello()">pIOT dashboard:</h1>
+    <ul id='dropdown1' class='dropdown-content'>
+        <li>
+            <input onclick="wakeupDays(Sunday)" type="checkbox" id="Sunday">
+            <label for="Sunday">Sunday </label>
+        </li>
+        <li>
+            <input onclick="wakeupDays(Monday)" type="checkbox" id="Monday">
+            <label for="Monday"> Monday </label>
+        </li>
+        <li>
+            <input onclick="wakeupDays(Tuesday)" type="checkbox" id="Tuesday">
+            <label for="Tuesday"> Tuesday </label>
+        </li>
+        <li>
+            <input onclick="wakeupDays(Wednesday)" type="checkbox" id="Wednesday	">
+            <label for="Wednesday"> Wednesday </label>
+        </li>
+        <li>
+            <input onclick="wakeupDays(Thursday)" type="checkbox" id="Thursday">
+            <label for="Thursday"> Thursday </label>
+        </li>
+        <li>
+            <input onclick="wakeupDays(Friday)" type="checkbox" id="Friday">
+            <label for="Friday"> Friday </label>
+        </li>
+        <li>
+            <input onclick="wakeupDays(Saturday)" type="checkbox" id="Saturday">
+            <label for="Saturday"> Saturday </label>
+        </li>
+    </ul>
+    <style type="text/css">
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h2 {
+            font-size: 20pt
+        }
+
+        form {
+            line-height: 0.8
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        dropdown-button {
+            margin: 10px
+        }
+    </style>
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header"><img src="ass/led.png" alt="Smiley face" height="42" width="42" hspace="10">RGB Strip</div>
+            <div class="collapsible-body">
+                <p>Brightness</p>
+                <form action="#">
+                    <p class="range-field">
+                        <input type="range" id="brightness" min="0" max="100" onclick="javascript:setrgb(false)" /> </p>
+                    <p>RGB power</p>
+                    <div class="switch">
+                        <label> Off
+                            <input type="checkbox"> <span class="lever" onclick="updatergb()"></span> On </label>
+                    </div>
+                    <h2>RGB colour mode</h2> </form>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div onclick="updatergb(1)" class="collapsible-header"><img src="ass/dropper.png" alt="Smiley face" height="42" width="42" hspace="10">Colour picker</div>
+                        <div class="collapsible-body">
+                            <input class="jscolor" id="colorpicker" onclick "updatergb(1)" value="003865"> </div>
+                    </li>
+                    <li>
+                        <div onclick="updatergb(2)" class="collapsible-header"><img src="ass/rgb.png" alt="Smiley face" height="42" width="42" hspace="10"> Crossfade</div>
+                        <div class="collapsible-body">
+                            <p>Cycle time (Seconds)</p>
+                            <form action="#">
+                                <p class="range-field">
+                                    <input type="range" id="time" min="50" max="1000" onclick="javascript:setrgb(true)" /> </p>
+                            </form>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><img src="ass/sun.png" alt="Smiley face" height="42" width="42" hspace="10">Natrual wakeup</div>
+                        <div class="collapsible-body">
+                            <form> Select a time:
+                                <input type="time" name="usr_time"> </form> <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Days active</a>
+                            <br> </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><img src="ass/server.png" alt="Smiley face" height="42" width="42" hspace="10">Desktop</div>
+            <div class="collapsible-body">
+                <p>Test123</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><img src="ass/pi.png" alt="Smiley face" height="42" width="42" hspace="10">Local config</div>
+            <div class="collapsible-body">
+                <p>Test123</p>
+            </div>
+        </li>
+    </ul>
+
+</html>
