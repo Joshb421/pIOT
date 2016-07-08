@@ -1,21 +1,8 @@
-var five = require("johnny-five");
-var Raspi = require("raspi-io");
-var pi = new five.Board({
-    io: new Raspi()
-});
-board.on("ready", function () {
-    var lcd = new five.LCD({
-        controller: "PCF8574A"
-    })
-    var rgb = new five.Led.RGB({
-        pins: [21, 20, 16]
-        isAnode: true
-    })
-    lcd.print("Hello world.")
-});
+'use scrict'
+
+
 
 function wakeup() {}
-"use strict";
 var fadePro = 0
 var daysActive = [""]
 
