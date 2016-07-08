@@ -1,6 +1,5 @@
 'use scrict'
-
-
+var io = require('socket.io')('localhost: 70');
 
 function wakeup() {}
 var fadePro = 0
@@ -28,20 +27,11 @@ function updatergb(mode) { //Mode 1 picker,Mode 2 Crossfade
         setTimeout(crossfade(), delay)
     }
 }
-js
+socket.on('test', function () {
+    console.log("It's Alive")
+})
 
-function crossfade() {
-    if (fadePro > 360) {
-        return true //should be a callback
-    }
-    else {
-        fadePro++;
-        hex = //hsl to rgb function TBD
-            writergb(hex)
-        console.log("fadePro")
-        return false
-    }
-}
+function randomCrossfade() {}
 // function setrgb() {
 //     //led.intensity(brightness)
 //     if (crossfadeTrue === true) {
