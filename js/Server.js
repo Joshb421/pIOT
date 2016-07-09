@@ -1,4 +1,12 @@
 console.log('Hello world')
+var net = require('net');
+var firmata = require('firmata');
+var five = require("johnny-five");
+var soc = require('socket.io');
+var RandomOrg = require('random-org');
+var random = new RandomOrg({
+    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
+});
 var options = {
     host: '192.168.1.20', // IP of ESP board
     port: 3030
