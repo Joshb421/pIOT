@@ -22,6 +22,8 @@ var client = net.connect(options, function () {
             , repl: false
         })
         board.on("ready", function () {
+            status = new five.Led(14)
+            status.on()
             rgb = new five.Led.RGB([12, 13, 15])
             setInterval(randomCrossfade(), 5000);
         }); //startup code here
@@ -45,7 +47,7 @@ var previous = [0, 0, 0]
 
 function randomCrossfade(time) {
     console.log("calling random API")
-    var current = RGB
+    rgbToArray('122312')
     console.log(RGB)
     random.generateBlobs({
         size: 24
