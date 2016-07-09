@@ -41,10 +41,11 @@ var random = new RandomOrg({
 });
 var Firmata = require("firmata").Board;
 var EtherPortClient = require("etherport-client").EtherPortClient;
-var board = new Firmata(new EtherPortClient({
+var esp = new Firmata(new EtherPortClient({
     host: "192.168.1.20"
     , port: 3030
 }));
+var board = new five.Board(esp);
 board.on("ready", function () {
     console.log("READY!");
     console.log(board.firmware.name + "-" + board.firmware.version.major + "." + board.firmware.version.minor);
