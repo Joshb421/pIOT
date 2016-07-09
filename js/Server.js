@@ -23,7 +23,7 @@ var client = net.connect(options, function () {
         })
         board.on("ready", function () {
             rgb = new five.Led.RGB([12, 13, 15])
-            setInterval(randomCrossfade, 5000);
+            setInterval(randomCrossfade(), 5000);
         }); //startup code here
     });
 });
@@ -45,14 +45,14 @@ var previous = [0, 0, 0]
 
 function randomCrossfade(time) {
     console.log("calling random API")
+    RGB = rgbToArray('123456')
+    var current = RGB
+    console.log(RGB)
     random.generateBlobs({
         size: 24
         , n: 1
         , format: 'hex'
-    }).then(function (result) {
-        RGB = rgbToArray('123456')
-        var current = RGB
-        console.log(RGB);
+    }).then(function (result) {;
         console.log(result.random.data);
         console.log(hex)
         rgb.color(hex)
