@@ -65,4 +65,4 @@ function rgbToArray(hex) {
     RGB.push(hexToRgb(hex).g)
     RGB.push(hexToRgb(hex).b)
     return RGB
-        //}
+}
