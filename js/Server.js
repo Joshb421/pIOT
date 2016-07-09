@@ -42,16 +42,13 @@ var random = new RandomOrg({
 var Firmata = require("firmata").Board;
 var EtherPortClient = require("etherport-client").EtherPortClient;
 var board = new Firmata(new EtherPortClient({
-  host: "192.168.1.103",
-  port: 3030
+    host: "192.168.1.20"
+    , port: 3030
 }));
-board.on("ready", function() {
-  console.log("READY!");
-  console.log(
-    board.firmware.name + "-" +
-    board.firmware.version.major + "." +
-    board.firmware.version.minor
-  );
- var led = five new,led(12);
+board.on("ready", function () {
+    console.log("READY!");
+    console.log(board.firmware.name + "-" + board.firmware.version.major + "." + board.firmware.version.minor);
+    var led = five new
+        , led(12);
     led.blink(1000);
 });
