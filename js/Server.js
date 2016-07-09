@@ -25,7 +25,7 @@ var client = net.connect(options, function () {
             status = new five.Led(14)
             status.on()
             rgb = new five.Led.RGB([12, 13, 15])
-            setInterval(randomCrossfade(), 5000);
+            randomCrossfade(30)
         }); //startup code here
     });
 });
@@ -40,7 +40,7 @@ function randomCrossfade(time) {
         , n: 1
         , format: 'hex'
     }).then(function (result) {;
-        var current = hexToRgb(result.random.data);
+        var current = rgbToArray(hexToRgb(result.random.data));
         var change = [(previous[0] - current[0]), (previous[1] - current[1]), (previous[2] - current[2])];
         var commonMutiple = change[0] * change[1] * change[2];
         console.log(current);
