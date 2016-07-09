@@ -28,7 +28,7 @@ var client = net.connect(options, function () {
                 random.generateBlobs({
                     size: 8
                     , n: 3
-                    , format: hex
+                    , format: 'hex'
                 }).then(function (result) {
                     console.log(result.random.data); // [55, 3]
                     rgb.color(result.random.data)
