@@ -43,7 +43,7 @@ function randomCrossfade(time) {
         var raw = result.random.data[0]
     });
     var raw = '123456'
-    var current = rgbToArray(hexToRgb(raw));
+    var current = rgbToArray(raw);
     var change = [(previous[0] - current[0]), (previous[1] - current[1]), (previous[2] - current[2])];
     var commonMutiple = change[0] * change[1] * change[2];
     console.log(current);
