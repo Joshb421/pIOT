@@ -40,7 +40,7 @@ function hexToRgb(hex) {
     return result ? {
         r: parseInt(result[1], 16)
         , g: parseInt(result[2], 16)
-        , b: parseInt(result[3], 16)
+            //        , b: parseInt(result[3], 16)
     } : null;
 }
 var previous = [0, 0, 0]
@@ -48,15 +48,15 @@ var previous = [0, 0, 0]
 function randomCrossfade(time) {
     console.log("calling random API")
     console.log(rgbToArray('122312'))
-    random.generateBlobs({
-        size: 24
-        , n: 1
-        , format: 'hex'
-    }).then(function (result) {;
-        console.log(result.random.data);
-        console.log(hex)
-        rgb.color(hex)
-    });
+        //    random.generateBlobs({
+        //        size: 24
+        //        , n: 1
+        //        , format: 'hex'
+        //    }).then(function (result) {;
+        //        console.log(result.random.data);
+        //        console.log(hex)
+        //        rgb.color(hex)
+        //    });
 }
 
 function rgbToArray(hex) {
@@ -65,4 +65,4 @@ function rgbToArray(hex) {
     RGB.push(hexToRgb(hex).g)
     RGB.push(hexToRgb(hex).b)
     return RGB
-}
+        //}
