@@ -26,31 +26,15 @@ var client = net.connect(options, function () {
             setInterval(function () {
                 console.log("calling random API")
                 random.generateBlobs({
-                    size: 24
-                    , n: 1
-                    , format: string
+                    size: 8
+                    , n: 3
+                    , format: hex
                 }).then(function (result) {
                     console.log(result.random.data); // [55, 3]
                     rgb.color(result.random.data)
-                    console.log(bintohex(result.random.data));
                 });
             }, 5000)
         });
     }); //startup code here
 });
 // Other functions in this section
-function bintohex(mybin) {
-    mybin = document.getElementById('bin').value;
-    z = -1;
-    number = 0;
-    for (i = mybin.length; i > -1; i--) {
-        //Every 1 in binary string is converted to decimal and added to number
-        if (mybin.charAt(i) == "1") {
-            number += Math.pow(2, z);
-        }
-        z += 1;
-    }
-    // Return is converting decimal to hexadecimal
-    mybin = number.toString(16);
-    return mybin
-}
