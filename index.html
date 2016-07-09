@@ -17,8 +17,16 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/jscolor.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <title>pIOT project</title>
 </head>
+<script>
+    var socket = io('localhost:70');
+    socket.on('test', function () {
+    console.log("test")
+    })
+    });
+</script>
 
 <body>
     <button type="button" id="jstrigger" onclick="javascript:test();">Submit</button>

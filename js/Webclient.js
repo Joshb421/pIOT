@@ -1,5 +1,6 @@
 'use scrict'
-var io = require('socket.io')('localhost: 70');
+var io = require('socket.io');
+var socket = io.connect('localhost:70')
 
 function wakeup() {}
 var fadePro = 0
