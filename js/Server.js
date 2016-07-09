@@ -24,6 +24,7 @@ var client = net.connect(options, function () {
         board.on("ready", function () {
             rgb = new five.Led.RGB([12, 13, 15])
             setInterval(function () {
+                console.log("calling random API")
                 random.generateIntegers({
                     min: 1
                     , max: 255
