@@ -33,7 +33,7 @@ var client = net.connect(options, function () {
                     var hex = '"#' + result.random.data[0] + '"'
                     console.log(result.random.data);
                     console.log(hex)
-                    rgb.color(result.random.data)
+                    rgb.color(hex)
                 });
             }, 5000)
         });
