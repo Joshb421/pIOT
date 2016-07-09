@@ -1,7 +1,7 @@
 var net = require('net');
 var firmata = require('firmata');
 var five = require("johnny-five");
-var io = require('socket.io');
+var soc = require('socket.io');
 var RandomOrg = require('random-org');
 var random = new RandomOrg({
     apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
