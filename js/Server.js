@@ -23,20 +23,41 @@ var client = net.connect(options, function () {
         })
         board.on("ready", function () {
             rgb = new five.Led.RGB([12, 13, 15])
-            setInterval(function () {
-                console.log("calling random API")
-                random.generateBlobs({
-                    size: 24
-                    , n: 1
-                    , format: 'hex'
-                }).then(function (result) {
-                    var hex = '#' + result.random.data[0]
-                    console.log(result.random.data);
-                    console.log(hex)
-                    rgb.color(hex)
-                });
-            }, 5000)
+            setInterval(function () {});
+        }); //startup code here
+    });
+    // Other functions in this section
+    function hexToRgb(hex) {
+        // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+        var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+        hex = hex.replace(shorthandRegex, function (m, r, g, b) {
+            return r + r + g + g + b + b;
         });
-    }); //startup code here
-});
-// Other functions in this section
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16)
+            , g: parseInt(result[2], 16)
+            , b: parseInt(result[3], 16)
+        } : null;
+    }
+    var previous = [0, 0, 0]
+
+    function randomCrossfade(time)
+    console.log("calling random API")
+    random.generateBlobs({
+        size: 24
+        , n: 1
+        , format: 'hex'
+    }).then(function (result) {
+        RGB = [] {
+            RGB.push(hexToRgb('3245ff').r)
+            RGB.push(hexToRgb('3245ff').g)
+            RGB.push(hexToRgb('3245ff').b)
+        }
+        var current = RGB
+        console.log(RGB);
+        console.log(result.random.data);
+        console.log(hex)
+        rgb.color(hex)
+    });
+}, 5000)
