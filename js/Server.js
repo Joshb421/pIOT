@@ -48,7 +48,6 @@ var board = new Firmata(new EtherPortClient({
 board.on("ready", function () {
     console.log("READY!");
     console.log(board.firmware.name + "-" + board.firmware.version.major + "." + board.firmware.version.minor);
-    var led = five new
-        , led(12);
+    var led = five new.led(12);
     led.blink(1000);
 });
