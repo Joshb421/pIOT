@@ -30,6 +30,31 @@ var client = net.connect(options, function () {
     });
 });
 // Other functions in this section
+var previous = [0, 0, 0]
+
+function randomCrossfade(time) {
+    console.log("calling random API")
+    console.log(rgbToArray('122312'))
+    random.generateBlobs({
+        size: 24
+        , n: 1
+        , format: 'hex'
+    }).then(function (result) {;
+        var current = hexToRgb(result.random.data);
+        var change = [(previous[0] - current[0]), (previous[1] - current[1]), (previous[2] - current[2])];
+        var commonMutiple = change[0] * change[1] * change[2];
+        console.log(current);
+    });
+}
+
+function rgbToArray(hex) {
+    var RGB = []
+    RGB.push(hexToRgb(hex).r);
+    RGB.push(hexToRgb(hex).g);
+    RGB.push(hexToRgb(hex).b);
+    return RGB;
+}
+
 function hexToRgb(hex) {
     // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
     var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
@@ -42,27 +67,4 @@ function hexToRgb(hex) {
         , g: parseInt(result[2], 16)
             //        , b: parseInt(result[3], 16)
     } : null;
-}
-var previous = [0, 0, 0]
-
-function randomCrossfade(time) {
-    console.log("calling random API")
-    console.log(rgbToArray('122312'))
-        //    random.generateBlobs({
-        //        size: 24
-        //        , n: 1
-        //        , format: 'hex'
-        //    }).then(function (result) {;
-        //        console.log(result.random.data);
-        //        console.log(hex)
-        //        rgb.color(hex)
-        //    });
-}
-
-function rgbToArray(hex) {
-    var RGB = []
-    RGB.push(hexToRgb(hex).r)
-    RGB.push(hexToRgb(hex).g)
-    RGB.push(hexToRgb(hex).b)
-    return RGB
 }
