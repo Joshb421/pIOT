@@ -22,7 +22,7 @@ var client = net.connect(options, function () {
             , repl: false
         })
         board.on("ready", function () {
-            rgb = new Led.RGB([12, 13, 15])
+            rgb = new five.Led.RGB([12, 13, 15])
             setInterval(function () {
                 random.generateIntegers({
                     min: 1
