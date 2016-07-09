@@ -26,8 +26,8 @@ var client = net.connect(options, function () {
             setInterval(function () {
                 console.log("calling random API")
                 random.generateBlobs({
-                    size: 8
-                    , n: 3
+                    size: 24
+                    , n: 1
                     , format: 'hex'
                 }).then(function (result) {
                     console.log(result.random.data); // [55, 3]
