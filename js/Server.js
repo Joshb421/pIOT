@@ -2,6 +2,10 @@ var net = require('net');
 var firmata = require('firmata');
 var five = require("johnny-five");
 var io = require('socket.io')(70);
+var RandomOrg = require('random-org');
+var random = new RandomOrg({
+    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
+});
 console.log('Hello world')
 var options = {
     host: '192.168.1.20', // IP of ESP board
@@ -18,9 +22,18 @@ var client = net.connect(options, function () {
             , repl: false
         })
         board.on("ready", function () {
-            //startup code here
-            socket.emit('test', )
+            rgb = new Led.RGB([12, 13, 15])
+            setInterval(function () {
+                random.generateIntegers({
+                    min: 1
+                    , max: 255
+                    , n: 3
+                }).then(function (result) {
+                    console.log(result.random.data); // [55, 3]
+                    rgb.color(result.random.data)
+                });
+            }, 5000)
         });
-        // Other functions in this section
-    })
-})
+    }); //startup code here
+});
+// Other functions in this section

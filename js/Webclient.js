@@ -1,6 +1,4 @@
 'use scrict'
-var io = require('socket.io');
-var socket = io.connect('localhost:70')
 
 function wakeup() {}
 var fadePro = 0
@@ -28,9 +26,6 @@ function updatergb(mode) { //Mode 1 picker,Mode 2 Crossfade
         setTimeout(crossfade(), delay)
     }
 }
-socket.on('test', function () {
-    console.log("It's Alive")
-})
 
 function randomCrossfade() {}
 // function setrgb() {
