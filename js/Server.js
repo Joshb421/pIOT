@@ -49,15 +49,17 @@ var client = net.connect(options, function () {
                     , n: 1
                     , format: 'hex'
                 }).then(function (result) {
-                    RGB = [] {
-                        RGB.push(hexToRgb('3245ff').r)
-                        RGB.push(hexToRgb('3245ff').g)
-                        RGB.push(hexToRgb('3245ff').b)
-                    }
+                    RGB = rgbToArray('123456')
                     var current = RGB
                     console.log(RGB);
                     console.log(result.random.data);
                     console.log(hex)
                     rgb.color(hex)
                 });
+            }
+
+            function rgbToArray(hex) {
+                RGB.push(hexToRgb(hex).r)
+                RGB.push(hexToRgb(hex).g)
+                RGB.push(hexToRgb(hex).b)
             }
