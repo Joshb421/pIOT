@@ -47,8 +47,7 @@ var previous = [0, 0, 0]
 
 function randomCrossfade(time) {
     console.log("calling random API")
-    rgbToArray('122312')
-    console.log(RGB)
+    console.log(rgbToArray('122312'))
     random.generateBlobs({
         size: 24
         , n: 1
@@ -65,4 +64,5 @@ function rgbToArray(hex) {
     RGB.push(hexToRgb(hex).r)
     RGB.push(hexToRgb(hex).g)
     RGB.push(hexToRgb(hex).b)
+    return RGB
 }
