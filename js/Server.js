@@ -59,7 +59,7 @@ function randomCrossfade(time) {
 }
 
 function rgbToArray(hex) {
-    RGB = []
+    var RGB = []
     RGB.push(hexToRgb(hex).r)
     RGB.push(hexToRgb(hex).g)
     RGB.push(hexToRgb(hex).b)
