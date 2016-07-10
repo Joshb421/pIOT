@@ -4,10 +4,11 @@ var firmata = require('firmata');
 var five = require("johnny-five");
 var soc = require('socket.io');
 var sleep = require('sleep');
-//var RandomOrg = require('random-org');
-//var random = new RandomOrg({
-//    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
-//});
+var delay = require('delayed')
+    //var RandomOrg = require('random-org');
+    //var random = new RandomOrg({
+    //    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
+    //});
 var options = {
     host: '192.168.1.20', // IP of ESP board
     port: 3030
@@ -52,7 +53,7 @@ var client = net.connect(options, function () {
                 var redDelay = 5000 / Math.abs(change[0]);
                 var delay = redDelay
                 console.log(change)
-                setRed((redDelay * 1000))
+                setRed(redDelay)
                     //                    setInterval(function () {
                     //                        var delay = greenDelay
                     //                        setInterval(function () {
@@ -135,21 +136,23 @@ function hexToRgb(hex) {
 }
 
 function setRed(delay) {
-    console.log("test")
-    while (change[0] > 0) {
-        sleep.usleep(delay)
-        change[0] = change[0] - 1
-        R++
-        red.brightness(R)
-        console.log(R)
-        console.log('Change remaining' + Math.abs(change[0]))
-    }
-    while (change[0] < 0) {
-        sleep.usleep(delay)
-        change[0] = change[0] + 1
-        R--
-        red.brightness(R)
-        console.log(R)
-        console.log('Change remaining' + Math.abs(change[0]))
-    }
+    delay.delay(function () {
+        console.log("test")
+        while (change[0] > 0) {
+            R++
+            red.brightness(R)
+            console.log(R)
+            console.log('Change remaining' + Math.abs(change[0]))
+            change[0] = change[0] - 1
+        }
+    }, delay)
+    delay.delay(function () {
+        while (change[0] < 0) {
+            R--
+            red.brightness(R)
+            console.log(R)
+            console.log('Change remaining' + Math.abs(change[0]))
+            change[0] = change[0] + 1
+        }
+    }, delay)
 }
