@@ -137,7 +137,7 @@ function hexToRgb(hex) {
 function setRed(delay) {
     var running
     if (change[0] > 0) {
-        if (running === true) {
+        while (running === true) {
             return
         }
         var redInc = setInterval(function () {
@@ -156,7 +156,7 @@ function setRed(delay) {
         }
     }
     if (change[0] < 0) {
-        if (running === true) {
+        while (running === true) {
             return
         }
         var redDec = setInterval(function () {
