@@ -55,21 +55,7 @@ var client = net.connect(options, function () {
                     console.log('Expected' + redDelay)
                     while (change[0] != 0) {
                         console.log("test")
-                        setTimeout(function () {
-                            if (change[0] > 0) {
-                                change[0] = change[0] - 1
-                                R++
-                                red.brightness(R)
-                            }
-                            else if (change[0] < 0) {
-                                change[0] = change[0] + 1
-                                R--
-                                red.brightness(R)
-                            }
-                            console.log('Delay: ' + delay)
-                            console.log(R)
-                            console.log('Change remaining' + Math.abs(change[0]))
-                        }, redDelay)
+                        setTimeout(setRed(), redDelay)
                     }
                 }, 5000)
                 //                    setInterval(function () {
@@ -154,6 +140,7 @@ function hexToRgb(hex) {
 }
 
 function setRed() {
+    console.log("test")
     if (change[0] > 0) {
         change[0] = change[0] - 1
         R++
@@ -164,5 +151,7 @@ function setRed() {
         R--
         red.brightness(R)
     }
+    console.log('Delay: ' + delay)
     console.log(R)
+    console.log('Change remaining' + Math.abs(change[0]))
 }
