@@ -136,7 +136,7 @@ function hexToRgb(hex) {
 }
 
 function setRed(delay) {
-    delay.delay(function () {
+    delayed.delay(function () {
         console.log("test")
         while (change[0] > 0) {
             R++
@@ -146,7 +146,7 @@ function setRed(delay) {
             change[0] = change[0] - 1
         }
     }, delay)
-    delay.delay(function () {
+    delayed.delay(function () {
         while (change[0] < 0) {
             R--
             red.brightness(R)
