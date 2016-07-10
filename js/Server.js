@@ -149,6 +149,9 @@ function setRed(delay) {
                 clearInterval(redInc)
             }
         }, delay)
+        if (change[0 === 0]) {
+            break
+        }
     }
     if (change[0] < 0) {
         var redDec = setInterval(function () {
@@ -163,5 +166,8 @@ function setRed(delay) {
                 clearInterval(redDec)
             }
         }, delay)
+    }
+    if (change[0 === 0]) {
+        break
     }
 }
