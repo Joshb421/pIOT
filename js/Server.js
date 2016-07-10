@@ -43,7 +43,7 @@ var client = net.connect(options, function () {
                 RGB.push(Math.floor((Math.random() * 254) + 1));
                 previous = current
                 current = RGB
-                var change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
+                change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
                 console.log(previous);
                 console.log(current);
                 console.log(change);
@@ -56,6 +56,7 @@ var client = net.connect(options, function () {
 // Other functions in this section
 var previous = [0, 0, 0]
 var current = [0, 0, 0]
+var change = [0, 0, 0]
     //function randomCrossfade(time) {
     //    console.log("Generating random number")
     //        //    random.generateBlobs({
