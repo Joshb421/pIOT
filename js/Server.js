@@ -140,6 +140,7 @@ function setRed(delay) {
             console.log("test")
             R++
             red.brightness(R)
+            console.log("increasing")
             console.log(R)
             console.log('Change remaining' + Math.abs(change[0]))
             change[0] = change[0] - 1
@@ -151,6 +152,7 @@ function setRed(delay) {
     }
     if (change[0] < 0) {
         var redDec = setInterval(function () {
+            console.log("decreasing")
             R--
             red.brightness(R)
             console.log(R)
