@@ -4,7 +4,7 @@ var firmata = require('firmata');
 var five = require("johnny-five");
 var soc = require('socket.io');
 var sleep = require('sleep');
-var delay = require('delayed')
+var delayed = require('delayed')
     //var RandomOrg = require('random-org');
     //var random = new RandomOrg({
     //    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
