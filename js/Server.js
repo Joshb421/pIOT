@@ -60,6 +60,32 @@ var client = net.connect(options, function () {
                     }
                     console.log(R)
                 }, 5000 / Math.abs(change[0]))
+                setInterval(function () {
+                    if (change[1] > 0) {
+                        change[1] = change[1] - 1
+                        G++
+                        green.brightness(G)
+                    }
+                    else if (change[1] < 0) {
+                        change[1] = change[1] + 1
+                        G--
+                        green.brightness(G)
+                    }
+                    console.log(G)
+                }, 5000 / Math.abs(change[1]))
+                setInterval(function () {
+                    if (change[2] > 0) {
+                        change[2] = change[2] - 1
+                        B++
+                        blue.brightness(B)
+                    }
+                    else if (change[2] < 0) {
+                        change[2] = change[2] + 1
+                        B--
+                        blue.brightness(B)
+                    }
+                    console.log(B)
+                }, 5000 / Math.abs(change[0]))
                 return
             }, 5000)
         }); //startup code here
