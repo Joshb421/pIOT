@@ -138,7 +138,7 @@ function setRed(delay) {
     var running
     if (change[0] > 0) {
         var redInc = setInterval(function () {
-            if running === true {
+            if (running === true) {
                 return
             }
             running = true
@@ -157,7 +157,7 @@ function setRed(delay) {
     }
     if (change[0] < 0) {
         var redDec = setInterval(function () {
-            if running === true {
+            if (running === true) {
                 return
             }
             running = true
