@@ -137,10 +137,10 @@ function hexToRgb(hex) {
 function setRed(delay) {
     var running
     if (change[0] > 0) {
+        if (running === true) {
+            return
+        }
         var redInc = setInterval(function () {
-            if (running === true) {
-                return
-            }
             running = true
             console.log("test")
             R++
@@ -156,10 +156,10 @@ function setRed(delay) {
         }
     }
     if (change[0] < 0) {
+        if (running === true) {
+            return
+        }
         var redDec = setInterval(function () {
-            if (running === true) {
-                return
-            }
             running = true
             console.log("decreasing")
             R--
