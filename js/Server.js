@@ -24,8 +24,11 @@ var client = net.connect(options, function () {
         board.on("ready", function () {
             status = new five.Led(14)
             status.on()
-            rgb = new five.Led.RGB([12, 13, 15])
+            red = new five.pin.PWM(12)
+            green = new five.pin.PWM(13)
+            blue = new five.pin.PWM(15)
             randomCrossfade(30)
+            red.write(255);
         }); //startup code here
     });
 });
@@ -44,14 +47,13 @@ function randomCrossfade(time) {
     var raw = '123456'
     var current = rgbToArray(raw);
     var change = [(previous[0] - current[0]), (previous[1] - current[1]), (previous[2] - current[2])];
-    var commonMutiple = change[0] * change[1] * change[2];
-    if (commonMutiple < 0) {
-        commonMutiple = commonMutiple * (-1)
-    }
     console.log(current);
     console.log(change);
     console.log(commonMutiple);
 }
+var R
+var G
+var B
 
 function rgbToArray(hex) {
     var RGB = []
