@@ -135,7 +135,7 @@ function hexToRgb(hex) {
 }
 
 function setRed(delay) {
-    while (change[0] > 0) {
+    if (change[0] > 0) {
         setInterval(function () {
             console.log("test")
             R++
@@ -144,9 +144,10 @@ function setRed(delay) {
             console.log('Change remaining' + Math.abs(change[0]))
             change[0] = change[0] - 1
             console.log(change)
+            break
         }, delay)
     }
-    while (change[0] < 0) {
+    if (change[0] < 0) {
         setInterval(function () {
             R--
             red.brightness(R)
@@ -154,6 +155,7 @@ function setRed(delay) {
             console.log('Change remaining' + Math.abs(change[0]))
             change[0] = change[0] + 1
             console.log(change)
+            break
         }, delay)
     }
 }
