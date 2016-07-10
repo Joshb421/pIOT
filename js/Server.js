@@ -101,7 +101,7 @@ var client = net.connect(options, function () {
                         //console.log(delay)
                     }, delay)
                 }, 5000)
-            }, 5000)
+            }, 6000)
         }); //startup code here
     });
 });
