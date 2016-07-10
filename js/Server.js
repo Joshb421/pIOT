@@ -3,10 +3,10 @@ var net = require('net');
 var firmata = require('firmata');
 var five = require("johnny-five");
 var soc = require('socket.io');
-var RandomOrg = require('random-org');
-var random = new RandomOrg({
-    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
-});
+//var RandomOrg = require('random-org');
+//var random = new RandomOrg({
+//    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
+//});
 var options = {
     host: '192.168.1.20', // IP of ESP board
     port: 3030
@@ -36,7 +36,7 @@ var client = net.connect(options, function () {
 var previous = [0, 0, 0]
 
 function randomCrossfade(time) {
-    console.log("calling random API")
+    console.log("Generating random number")
         //    random.generateBlobs({
         //        size: 24
         //        , n: 1
@@ -45,9 +45,15 @@ function randomCrossfade(time) {
         //        var raw = result.random.data[0]
         //    });
     var raw = '123456'
-    var current = rgbToArray(raw);
+    var RGB = []
+    RGB.push(Math.floor((Math.random() * 254) + 1));
+    RGB.push(Math.floor((Math.random() * 254) + 1));
+    RGB.push(Math.floor((Math.random() * 254) + 1));
+    var previous = current
+    var current = RGB
     var change = [(previous[0] - current[0]), (previous[1] - current[1]), (previous[2] - current[2])];
     console.log(current);
+    console.log(previous);
     console.log(change);
     console.log(commonMutiple);
 }
@@ -56,7 +62,6 @@ var G = 0
 var B = 0
 
 function rgbToArray(hex) {
-    var RGB = []
     RGB.push(hexToRgb(hex).r);
     RGB.push(hexToRgb(hex).g);
     RGB.push(hexToRgb(hex).b);
@@ -72,7 +77,7 @@ function hexToRgb(hex) {
     } : null;
 }
 
-function setRed(time) {
+function setRed() {
     if (change[0] > 0) {
         change[0] = change[0] - 1
         R++
