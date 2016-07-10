@@ -24,9 +24,9 @@ var client = net.connect(options, function () {
         board.on("ready", function () {
             status = new five.Led(14)
             status.on()
-            red = new five.pin.PWM(12)
-            green = new five.pin.PWM(13)
-            blue = new five.pin.PWM(15)
+            red = new five.Pin.PWM(12)
+            green = new five.Pin.PWM(13)
+            blue = new five.Pin.PWM(15)
             randomCrossfade(30)
             red.write(255);
         }); //startup code here
@@ -51,9 +51,9 @@ function randomCrossfade(time) {
     console.log(change);
     console.log(commonMutiple);
 }
-var R
-var G
-var B
+var R = 0
+var G = 0
+var B = 0
 
 function rgbToArray(hex) {
     var RGB = []
@@ -70,4 +70,18 @@ function hexToRgb(hex) {
         , g: parseInt(result[2], 16)
         , b: parseInt(result[3], 16)
     } : null;
+}
+
+function setRed(time) {
+    if (change[0] > 0) {
+        change[0] = change[0] - 1
+        R++
+        red.write(R)
+    }
+    if
+    else(change[0] < 0) {
+        change[0] = change[0] + 1
+        R--
+        red.write(R)
+    }
 }
