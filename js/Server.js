@@ -156,7 +156,4 @@ function setRed(delay) {
             console.log(change)
         }, delay)
     }
-    else {
-        return
-    }
 }
