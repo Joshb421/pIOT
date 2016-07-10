@@ -85,7 +85,7 @@ var client = net.connect(options, function () {
                         blue.brightness(B)
                     }
                     console.log(B)
-                }, 5000 / Math.abs(change[0]))
+                }, 5000 / Math.abs(change[2]))
                 return
             }, 5000)
         }); //startup code here
