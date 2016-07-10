@@ -144,17 +144,19 @@ function setRed() {
         change[0] = change[0] - 1
         R++
         red.brightness(R)
+        console.log(R)
+        console.log('Change remaining' + Math.abs(change[0]))
         return
     }
     else if (change[0] < 0) {
         change[0] = change[0] + 1
         R--
         red.brightness(R)
+        console.log(R)
+        console.log('Change remaining' + Math.abs(change[0]))
         return
     }
     else {
         return
     }
-    console.log(R)
-    console.log('Change remaining' + Math.abs(change[0]))
 }
