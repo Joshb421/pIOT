@@ -144,9 +144,6 @@ function setRed(delay) {
             console.log('Change remaining' + Math.abs(change[0]))
             change[0] = change[0] - 1
             console.log(change)
-            if (change[0] == 0) {
-                break
-            }
         }, delay)
     }
     if (change[0] < 0) {
@@ -157,9 +154,6 @@ function setRed(delay) {
             console.log('Change remaining' + Math.abs(change[0]))
             change[0] = change[0] + 1
             console.log(change)
-            if (change[0] == 0) {
-                break
-            }
         }, delay)
     }
 }
