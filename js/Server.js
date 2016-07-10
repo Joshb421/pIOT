@@ -15,51 +15,49 @@ var client = net.connect(options, function () {
     var socketClient = this;
     var esp = new firmata.Board(socketClient);
     esp.once('ready', function () {
-        console.log('IO Ready');
-        esp.isReady = true;
-        var board = new five.Board({
-            io: esp
-            , repl: false
-        })
-        board.on("ready", function () {
-            status = new five.Led(14)
-            status.on()
-            red = new five.Led(12)
-            green = new five.Led(13)
-            blue = new five.Led(15)
-            setInterval(function () {
-                    console.log("Generating random number")
-                        //    random.generateBlobs({
-                        //        size: 24
-                        //        , n: 1
-                        //        , format: 'hex'
-                        //    }).then(function (result) {;
-                        //        var raw = result.random.data[0]
-                        //    });
-                    var raw = '123456'
-                    var RGB = []
-                    RGB.push(Math.floor((Math.random() * 254) + 1));
-                    RGB.push(Math.floor((Math.random() * 254) + 1));
-                    RGB.push(Math.floor((Math.random() * 254) + 1));
-                    previous = current
-                    current = RGB
-                    change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
-                    console.log(previous);
-                    console.log(current);
-                    console.log(change);
-                    var greenDelay = 5000 / Math.abs(change[1])
-                    var blueDelay = 5000 / Math.abs(change[2])
-                    var redDelay = 5000 / Math.abs(change[0])
-                    var delay = redDelay
-                    console.log(change)
-                    while (change[0] != 0) {
-                        console.log('Delay: ' + redDelay)
-                        var test = setTimeout(setRed(), redDelay);
-                        while (test = !'done') {
-                            var test = setTimeout(setRed(), redDelay)
+            console.log('IO Ready');
+            esp.isReady = true;
+            var board = new five.Board({
+                io: esp
+                , repl: false
+            })
+            board.on("ready", function () {
+                    status = new five.Led(14)
+                    status.on()
+                    red = new five.Led(12)
+                    green = new five.Led(13)
+                    blue = new five.Led(15)
+                    setInterval(function () {
+                            console.log("Generating random number")
+                                //    random.generateBlobs({
+                                //        size: 24
+                                //        , n: 1
+                                //        , format: 'hex'
+                                //    }).then(function (result) {;
+                                //        var raw = result.random.data[0]
+                                //    });
+                            var raw = '123456'
+                            var RGB = []
+                            RGB.push(Math.floor((Math.random() * 254) + 1));
+                            RGB.push(Math.floor((Math.random() * 254) + 1));
+                            RGB.push(Math.floor((Math.random() * 254) + 1));
+                            previous = current
+                            current = RGB
+                            change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
+                            console.log(previous);
+                            console.log(current);
+                            console.log(change);
+                            var greenDelay = 5000 / Math.abs(change[1])
+                            var blueDelay = 5000 / Math.abs(change[2])
+                            var redDelay = 5000 / Math.abs(change[0])
+                            var delay = redDelay
+                            console.log(change)
+                            while (change[0] != 0) {
+                                console.log('Delay: ' + redDelay)
+                                var test = setTimeout(setRed(), redDelay);
+                            }
                         }
-                    }
-                }, 5000)
+                    }, 5000)
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -92,7 +90,7 @@ var client = net.connect(options, function () {
                 //                            }
                 //                            //console.log(delay)
                 //                        }, delay)
-        }, 5000)
+            }, 5000)
     });
 });
 // Other functions in this section
@@ -160,8 +158,6 @@ function setRed() {
         console.log('Change remaining' + Math.abs(change[0]))
         return
     }
-    else {
-        return ('done')
-    }
+    else {}
     return ('done')
 }
