@@ -142,44 +142,45 @@ function setRed(delay) {
         }
         else if (running = !true) {
             var redInc = setInterval(function () {
-                running = true
-                console.log("test")
-                R++
-                red.brightness(R)
-                console.log("increasing")
-                console.log(R)
-                console.log('Change remaining' + Math.abs(change[0]))
-                change[0] = change[0] - 1
-                console.log(change0
-                    if (change[0 === 0]) {
-                        running = flase
-                        return running
-                    })
-            }, delay)
-        }
-    }
-    if (change[0] < 0) {
-        if (running === true) {
-            return
-        }
-        else if (running = !true) {
-            var redDec = setInterval(function () {
-                running = true
-                console.log("decreasing")
-                R--
-                red.brightness(R)
-                console.log(R)
-                console.log('Change remaining' + Math.abs(change[0]))
-                change[0] = change[0] + 1
-                console.log(change)
-                if (change[0 === 0]) {
-                    running = false
-                    return
+                        running = true
+                        console.log("test")
+                        R++
+                        red.brightness(R)
+                        console.log("increasing")
+                        console.log(R)
+                        console.log('Change remaining' + Math.abs(change[0]))
+                        change[0] = change[0] - 1
+                        console.log(change)
+                        if (change[0 === 0]) {
+                            running = flase
+                            return running
+                        })
                 }
-            }, delay)
-        }
+                , delay)
     }
-    if (change[0 === 0]) {
+}
+if (change[0] < 0) {
+    if (running === true) {
         return
     }
+    else if (running = !true) {
+        var redDec = setInterval(function () {
+            running = true
+            console.log("decreasing")
+            R--
+            red.brightness(R)
+            console.log(R)
+            console.log('Change remaining' + Math.abs(change[0]))
+            change[0] = change[0] + 1
+            console.log(change)
+            if (change[0 === 0]) {
+                running = false
+                return
+            }
+        }, delay)
+    }
+}
+if (change[0 === 0]) {
+    return
+}
 }
