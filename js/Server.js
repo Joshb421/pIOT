@@ -24,9 +24,9 @@ var client = net.connect(options, function () {
         board.on("ready", function () {
             status = new five.Led(14)
             status.on()
-            red = new five.Pin.PWM(12)
-            green = new five.Pin.PWM(13)
-            blue = new five.Pin.PWM(15)
+            red = new five.Led(12)
+            green = new five.Led(13)
+            blue = new five.Led(15)
             randomCrossfade(30)
             red.write(255);
         }); //startup code here
@@ -81,11 +81,11 @@ function setRed() {
     if (change[0] > 0) {
         change[0] = change[0] - 1
         R++
-        red.write(R)
+        red.brightness(R)
     }
     else if (change[0] < 0) {
         change[0] = change[0] + 1
         R--
-        red.write(R)
+        red.brightness(R)
     }
 }
