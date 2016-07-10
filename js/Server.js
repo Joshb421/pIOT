@@ -27,37 +27,56 @@ var client = net.connect(options, function () {
             red = new five.Led(12)
             green = new five.Led(13)
             blue = new five.Led(15)
-            setInterval(randomCrossfade(30), 5000)
-            red.brightness(255);
+            setInterval(function () {
+                console.log("Generating random number")
+                    //    random.generateBlobs({
+                    //        size: 24
+                    //        , n: 1
+                    //        , format: 'hex'
+                    //    }).then(function (result) {;
+                    //        var raw = result.random.data[0]
+                    //    });
+                var raw = '123456'
+                var RGB = []
+                RGB.push(Math.floor((Math.random() * 254) + 1));
+                RGB.push(Math.floor((Math.random() * 254) + 1));
+                RGB.push(Math.floor((Math.random() * 254) + 1));
+                previous = current
+                current = RGB
+                var change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
+                console.log(previous);
+                console.log(current);
+                console.log(change);
+                return
+            }, 5000)
         }); //startup code here
     });
 });
 // Other functions in this section
 var previous = [0, 0, 0]
 var current = [0, 0, 0]
-
-function randomCrossfade(time) {
-    console.log("Generating random number")
-        //    random.generateBlobs({
-        //        size: 24
-        //        , n: 1
-        //        , format: 'hex'
-        //    }).then(function (result) {;
-        //        var raw = result.random.data[0]
-        //    });
-    var raw = '123456'
-    var RGB = []
-    RGB.push(Math.floor((Math.random() * 254) + 1));
-    RGB.push(Math.floor((Math.random() * 254) + 1));
-    RGB.push(Math.floor((Math.random() * 254) + 1));
-    previous = current
-    current = RGB
-    var change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
-    console.log(previous);
-    console.log(current);
-    console.log(change);
-    return
-}
+    //function randomCrossfade(time) {
+    //    console.log("Generating random number")
+    //        //    random.generateBlobs({
+    //        //        size: 24
+    //        //        , n: 1
+    //        //        , format: 'hex'
+    //        //    }).then(function (result) {;
+    //        //        var raw = result.random.data[0]
+    //        //    });
+    //    var raw = '123456'
+    //    var RGB = []
+    //    RGB.push(Math.floor((Math.random() * 254) + 1));
+    //    RGB.push(Math.floor((Math.random() * 254) + 1));
+    //    RGB.push(Math.floor((Math.random() * 254) + 1));
+    //    previous = current
+    //    current = RGB
+    //    var change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
+    //    console.log(previous);
+    //    console.log(current);
+    //    console.log(change);
+    //    return
+    //}
 var R = 0
 var G = 0
 var B = 0
