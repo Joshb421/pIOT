@@ -12,22 +12,22 @@ var options = {
     port: 3030
 };
 var client = net.connect(options, function () {
-    var socketClient = this;
-    var esp = new firmata.Board(socketClient);
-    esp.once('ready', function () {
-        console.log('IO Ready');
-        esp.isReady = true;
-        var board = new five.Board({
-            io: esp
-            , repl: false
-        })
-        board.on("ready", function () {
-            status = new five.Led(14)
-            status.on()
-            red = new five.Led(12)
-            green = new five.Led(13)
-            blue = new five.Led(15)
-            setInterval(function () {
+var socketClient = this;
+var esp = new firmata.Board(socketClient);
+esp.once('ready', function () {
+    console.log('IO Ready');
+    esp.isReady = true;
+    var board = new five.Board({
+        io: esp
+        , repl: false
+    })
+    board.on("ready", function () {
+        status = new five.Led(14)
+        status.on()
+        red = new five.Led(12)
+        green = new five.Led(13)
+        blue = new five.Led(15)
+        setInterval(function () {
                 console.log("Generating random number")
                     //    random.generateBlobs({
                     //        size: 24
@@ -70,42 +70,43 @@ var client = net.connect(options, function () {
                             console.log('Change remaining' + Math.abs(change[0]))
                         }
                     }, redDelay)
-                setInterval(function () {
-                    var delay = greenDelay
-                    setInterval(function () {
-                        if (change[1] > 0) {
-                            change[1] = change[1] - 1
-                            G++
-                            green.brightness(G)
-                        }
-                        else if (change[1] < 0) {
-                            change[1] = change[1] + 1
-                            G--
-                            green.brightness(G)
-                        }
-                        //console.log(G)
-                        // console.log(delay)
-                    }, delay)
-                }, 5000)
-                setInterval(function () {
-                    var delay = blueDelay
-                    setInterval(function () {
-                        if (change[2] > 0) {
-                            change[2] = change[2] - 1
-                            B++
-                            blue.brightness(B)
-                        }
-                        else if (change[2] < 0) {
-                            change[2] = change[2] + 1
-                            B--
-                            blue.brightness(B)
-                        }
-                        //console.log(delay)
-                    }, delay)
-                }, 5000)
-            }, 5000)
-        }); //startup code here
-    });
+            }
+        }
+        setInterval(function () {
+            var delay = greenDelay
+            setInterval(function () {
+                if (change[1] > 0) {
+                    change[1] = change[1] - 1
+                    G++
+                    green.brightness(G)
+                }
+                else if (change[1] < 0) {
+                    change[1] = change[1] + 1
+                    G--
+                    green.brightness(G)
+                }
+                //console.log(G)
+                // console.log(delay)
+            }, delay)
+        }, 5000) setInterval(function () {
+            var delay = blueDelay
+            setInterval(function () {
+                if (change[2] > 0) {
+                    change[2] = change[2] - 1
+                    B++
+                    blue.brightness(B)
+                }
+                else if (change[2] < 0) {
+                    change[2] = change[2] + 1
+                    B--
+                    blue.brightness(B)
+                }
+                //console.log(delay)
+            }, delay)
+        }, 5000)
+    }, 5000)
+}); //startup code here
+});
 });
 // Other functions in this section
 var previous = [0, 0, 0]
