@@ -53,8 +53,14 @@ var client = net.connect(options, function () {
                     var delay = redDelay
                     console.log(change)
                     setInterval(function () {
+<<<<<<< HEAD
                         setRed()
                         console.log(redDelay)
+=======
+                        while (change[0] != 0) {
+                            setRed()
+                        }
+>>>>>>> parent of 1904fde... h
                     }, redDelay)
                 }, 5000)
                 //                    setInterval(function () {
