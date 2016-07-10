@@ -139,6 +139,7 @@ function hexToRgb(hex) {
 }
 
 function setRed() {
+    console.log("test")
     if (change[0] > 0) {
         change[0] = change[0] - 1
         R++
