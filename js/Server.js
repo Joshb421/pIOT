@@ -56,7 +56,6 @@ function randomCrossfade(time) {
     console.log(current);
     console.log(previous);
     console.log(change);
-    console.log(commonMutiple);
 }
 var R = 0
 var G = 0
