@@ -45,6 +45,9 @@ function randomCrossfade(time) {
     var current = rgbToArray(raw);
     var change = [(previous[0] - current[0]), (previous[1] - current[1]), (previous[2] - current[2])];
     var commonMutiple = change[0] * change[1] * change[2];
+    if (commonMutiple < 0) {
+        commonMutiple = commonMutiple * (-1)
+    }
     console.log(current);
     console.log(change);
     console.log(commonMutiple);
