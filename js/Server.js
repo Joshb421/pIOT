@@ -52,10 +52,12 @@ var client = net.connect(options, function () {
                     var redDelay = 5000 / Math.abs(change[0])
                     var delay = redDelay
                     console.log(change)
-                    setInterval(function () {
-                        setRed()
-                        console.log(redDelay)
-                    }, redDelay)
+                    if (change[0] = !0) {
+                        setInterval(function () {
+                            setRed()
+                            console.log(redDelay)
+                        }, redDelay)
+                    }
                 }, 5000)
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
