@@ -47,6 +47,7 @@ var client = net.connect(options, function () {
                 console.log(previous);
                 console.log(current);
                 console.log(change);
+                setInterval(setred(), 5000 / Math.abs(change[0]))
                 return
             }, 5000)
         }); //startup code here
@@ -108,4 +109,5 @@ function setRed() {
         R--
         red.brightness(R)
     }
+    console.log(R)
 }
