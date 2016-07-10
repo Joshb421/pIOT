@@ -59,6 +59,7 @@ var client = net.connect(options, function () {
                         red.brightness(R)
                     }
                     console.log(R)
+                    console.log(change[0])
                 }, 5000 / Math.abs(change[0]))
                 setInterval(function () {
                     if (change[1] > 0) {
@@ -71,7 +72,7 @@ var client = net.connect(options, function () {
                         G--
                         green.brightness(G)
                     }
-                    console.log(G)
+                    //console.log(G)
                 }, 5000 / Math.abs(change[1]))
                 setInterval(function () {
                     if (change[2] > 0) {
@@ -84,7 +85,7 @@ var client = net.connect(options, function () {
                         B--
                         blue.brightness(B)
                     }
-                    console.log(B)
+                    //console.log(B)
                 }, 5000 / Math.abs(change[2]))
                 return
             }, 5000)
