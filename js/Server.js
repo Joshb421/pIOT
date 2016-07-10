@@ -135,8 +135,13 @@ function hexToRgb(hex) {
 }
 
 function setRed(delay) {
+    var running
     if (change[0] > 0) {
         var redInc = setInterval(function () {
+            if running === true {
+                return
+            }
+            running = true
             console.log("test")
             R++
             red.brightness(R)
@@ -145,9 +150,6 @@ function setRed(delay) {
             console.log('Change remaining' + Math.abs(change[0]))
             change[0] = change[0] - 1
             console.log(change)
-            if (change[0 === 0]) {
-                clearInterval(redInc)
-            }
         }, delay)
         if (change[0 === 0]) {
             return
@@ -155,6 +157,10 @@ function setRed(delay) {
     }
     if (change[0] < 0) {
         var redDec = setInterval(function () {
+            if running === true {
+                return
+            }
+            running = true
             console.log("decreasing")
             R--
             red.brightness(R)
@@ -163,7 +169,8 @@ function setRed(delay) {
             change[0] = change[0] + 1
             console.log(change)
             if (change[0 === 0]) {
-                clearInterval(redDec)
+                running = false
+                return
             }
         }, delay)
     }
