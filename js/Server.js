@@ -150,7 +150,7 @@ function setRed(delay) {
             }
         }, delay)
         if (change[0 === 0]) {
-            break
+            return
         }
     }
     if (change[0] < 0) {
@@ -168,6 +168,6 @@ function setRed(delay) {
         }, delay)
     }
     if (change[0 === 0]) {
-        break
+        return
     }
 }
