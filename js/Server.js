@@ -15,81 +15,81 @@ var client = net.connect(options, function () {
     var socketClient = this;
     var esp = new firmata.Board(socketClient);
     esp.once('ready', function () {
-        console.log('IO Ready');
-        esp.isReady = true;
-        var board = new five.Board({
-            io: esp
-            , repl: false
-        })
-        board.on("ready", function () {
-            status = new five.Led(14)
-            status.on()
-            red = new five.Led(12)
-            green = new five.Led(13)
-            blue = new five.Led(15)
-            setInterval(function () {
-                console.log("Generating random number")
-                    //    random.generateBlobs({
-                    //        size: 24
-                    //        , n: 1
-                    //        , format: 'hex'
-                    //    }).then(function (result) {;
-                    //        var raw = result.random.data[0]
-                    //    });
-                var raw = '123456'
-                var RGB = []
-                RGB.push(Math.floor((Math.random() * 254) + 1));
-                RGB.push(Math.floor((Math.random() * 254) + 1));
-                RGB.push(Math.floor((Math.random() * 254) + 1));
-                previous = current
-                current = RGB
-                change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
-                console.log(previous);
-                console.log(current);
-                console.log(change);
-                setInterval(function () {
-                    if (change[0] > 0) {
-                        change[0] = change[0] - 1
-                        R++
-                        red.brightness(R)
-                    }
-                    else if (change[0] < 0) {
-                        change[0] = change[0] + 1
-                        R--
-                        red.brightness(R)
-                    }
-                    console.log(R)
-                    console.log('Change remaining' + Math.abs(change[0]))
-                }, 5000 / Math.abs(change[0]))
-                setInterval(function () {
-                    if (change[1] > 0) {
-                        change[1] = change[1] - 1
-                        G++
-                        green.brightness(G)
-                    }
-                    else if (change[1] < 0) {
-                        change[1] = change[1] + 1
-                        G--
-                        green.brightness(G)
-                    }
-                    //console.log(G)
-                }, 5000 / Math.abs(change[1]))
-                setInterval(function () {
-                    if (change[2] > 0) {
-                        change[2] = change[2] - 1
-                        B++
-                        blue.brightness(B)
-                    }
-                    else if (change[2] < 0) {
-                        change[2] = change[2] + 1
-                        B--
-                        blue.brightness(B)
-                    }
-                    //console.log(B)
-                }, 5000 / Math.abs(change[2]))
-                return
-            }, 5000)
-        }); //startup code here
+            console.log('IO Ready');
+            esp.isReady = true;
+            var board = new five.Board({
+                io: esp
+                , repl: false
+            })
+            board.on("ready", function () {
+                    status = new five.Led(14)
+                    status.on()
+                    red = new five.Led(12)
+                    green = new five.Led(13)
+                    blue = new five.Led(15)
+                    setInterval(function () {
+                            console.log("Generating random number")
+                                //    random.generateBlobs({
+                                //        size: 24
+                                //        , n: 1
+                                //        , format: 'hex'
+                                //    }).then(function (result) {;
+                                //        var raw = result.random.data[0]
+                                //    });
+                            var redDelay = 5000 / Math.abs(change[0])
+                            var greenDelay = 5000 / Math.abs(change[1])
+                            var blueDelay = 5000 / Math.abs(change[2])
+                            var raw = '123456'
+                            var RGB = []
+                            RGB.push(Math.floor((Math.random() * 254) + 1));
+                            RGB.push(Math.floor((Math.random() * 254) + 1));
+                            RGB.push(Math.floor((Math.random() * 254) + 1));
+                            previous = current
+                            current = RGB
+                            change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
+                            console.log(previous);
+                            console.log(current);
+                            console.log(change);
+                            setInterval(function () {
+                                if (change[0] > 0) {
+                                    change[0] = change[0] - 1
+                                    R++
+                                    red.brightness(R)
+                                }
+                                else if (change[0] < 0) {
+                                    change[0] = change[0] + 1
+                                    R--
+                                    red.brightness(R)
+                                }
+                                console.log(R)
+                                console.log('Change remaining' + Math.abs(change[0]))
+                            }, redDelay)) setInterval(function () {
+                            if (change[1] > 0) {
+                                change[1] = change[1] - 1
+                                G++
+                                green.brightness(G)
+                            }
+                            else if (change[1] < 0) {
+                                change[1] = change[1] + 1
+                                G--
+                                green.brightness(G)
+                            }
+                            //console.log(G)
+                        }, greenDelay) setInterval(function () {
+                            if (change[2] > 0) {
+                                change[2] = change[2] - 1
+                                B++
+                                blue.brightness(B)
+                            }
+                            else if (change[2] < 0) {
+                                change[2] = change[2] + 1
+                                B--
+                                blue.brightness(B)
+                            }
+                            //console.log(B)
+                        }, blueDelay) return
+                    }, 5000)
+            }); //startup code here
     });
 });
 // Other functions in this section
