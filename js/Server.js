@@ -94,7 +94,7 @@ var client = net.connect(options, function () {
                             blue.brightness(B)
                         }
                         //console.log(B)
-                    }, blueDelay) return
+                    }, blueDelay)
                 }, 5000)
             }, 5000)
         }); //startup code here
