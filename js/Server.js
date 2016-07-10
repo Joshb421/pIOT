@@ -52,6 +52,7 @@ var client = net.connect(options, function () {
                 var blueDelay = 5000 / Math.abs(change[2])
                 setInterval(function () {
                     var delay = redDelay
+                    console.log('Expected' + redDelay)
                     setInterval(function () {
                         if (change[0] > 0) {
                             change[0] = change[0] - 1
@@ -101,7 +102,7 @@ var client = net.connect(options, function () {
                         //console.log(delay)
                     }, delay)
                 }, 5000)
-            }, 6000)
+            }, 5000)
         }); //startup code here
     });
 });
