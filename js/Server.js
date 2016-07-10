@@ -52,9 +52,8 @@ var client = net.connect(options, function () {
                     var redDelay = 5000 / Math.abs(change[0])
                     var delay = redDelay
                     console.log(change)
-                    console.log('Expected' + redDelay)
                     while (change[0] != 0) {
-                        console.log("test")
+                        console.log('Delay: ' + redDelay)
                         setTimeout(setRed(), redDelay)
                     }
                 }, 5000)
@@ -151,7 +150,6 @@ function setRed() {
         R--
         red.brightness(R)
     }
-    console.log('Delay: ' + delay)
     console.log(R)
     console.log('Change remaining' + Math.abs(change[0]))
 }
