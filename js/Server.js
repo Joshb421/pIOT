@@ -53,9 +53,7 @@ var client = net.connect(options, function () {
                     var delay = redDelay
                     console.log(change)
                     setInterval(function () {
-                        while (change[0] != 0) {
-                            setRed()
-                        }
+                        setRed()
                     }, redDelay)
                 }, 5000)
                 //                    setInterval(function () {
