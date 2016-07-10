@@ -3,6 +3,7 @@ var net = require('net');
 var firmata = require('firmata');
 var five = require("johnny-five");
 var soc = require('socket.io');
+var sleep = require('sleep');
 //var RandomOrg = require('random-org');
 //var random = new RandomOrg({
 //    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
@@ -36,7 +37,6 @@ var client = net.connect(options, function () {
                         //    }).then(function (result) {;
                         //        var raw = result.random.data[0]
                         //    });
-                    var raw = '123456'
                     var RGB = []
                     RGB.push(Math.floor((Math.random() * 254) + 1));
                     RGB.push(Math.floor((Math.random() * 254) + 1));
@@ -47,17 +47,15 @@ var client = net.connect(options, function () {
                     console.log(previous);
                     console.log(current);
                     console.log(change);
-                    var greenDelay = 5000 / Math.abs(change[1])
-                    var blueDelay = 5000 / Math.abs(change[2])
-                    var redDelay = 5000 / Math.abs(change[0])
+                    var greenDelay = 5000000 / Math.abs(change[1])
+                    var blueDelay = 5000000 / Math.abs(change[2])
+                    var redDelay = 5000000 / Math.abs(change[0]);
                     var delay = redDelay
                     console.log(change)
-                    if (change[0] = !0) {
-                        setInterval(function () {
-                            setRed()
-                            console.log(redDelay)
-                        }, redDelay)
-                    }
+                    setInterval(function () {
+                        setRed()
+                        console.log(redDelay)
+                    }, redDelay)
                 }, 5000)
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
