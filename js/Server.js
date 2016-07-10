@@ -150,7 +150,7 @@ var client = net.connect(options, function () {
                     console.log(R)
                     console.log('Change remaining' + Math.abs(change[0]))
                 }
-                else if (change[0] < 0) {
+                while (change[0] < 0) {
                     sleep.usleep(redDelay * 1000)
                     change[0] = change[0] + 1
                     R--
