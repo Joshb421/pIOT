@@ -53,22 +53,23 @@ var client = net.connect(options, function () {
                 var delay = redDelay
                 console.log(change)
                 console.log('Expected' + redDelay)
-                setInterval(function () {
-                    var delay = redDelay
-                    if (change[0] > 0) {
-                        change[0] = change[0] - 1
-                        R++
-                        red.brightness(R)
-                    }
-                    else if (change[0] < 0) {
-                        change[0] = change[0] + 1
-                        R--
-                        red.brightness(R)
-                    }
-                    console.log('Delay: ' + delay)
-                    console.log(R)
-                    console.log('Change remaining' + Math.abs(change[0]))
-                }, delay)
+                while (change[0] != 0) {
+                    setTimeout(function () {
+                            if (change[0] > 0) {
+                                change[0] = change[0] - 1
+                                R++
+                                red.brightness(R)
+                            }
+                            else if (change[0] < 0) {
+                                change[0] = change[0] + 1
+                                R--
+                                red.brightness(R)
+                            }
+                            console.log('Delay: ' + delay)
+                            console.log(R)
+                            console.log('Change remaining' + Math.abs(change[0]))
+                        }
+                    }, redDelay)
                 setInterval(function () {
                     var delay = greenDelay
                     setInterval(function () {
