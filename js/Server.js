@@ -52,10 +52,11 @@ function randomCrossfade(time) {
     RGB.push(Math.floor((Math.random() * 254) + 1));
     previous = current
     current = RGB
-    var change = [(previous[0] - current[0]), (previous[1] - current[1]), (previous[2] - current[2])];
-    console.log(current);
+    var change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
     console.log(previous);
+    console.log(current);
     console.log(change);
+    return
 }
 var R = 0
 var G = 0
