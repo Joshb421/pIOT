@@ -49,26 +49,25 @@ var client = net.connect(options, function () {
                 console.log(change);
                 var greenDelay = 5000 / Math.abs(change[1])
                 var blueDelay = 5000 / Math.abs(change[2])
+                var redDelay = 5000 / Math.abs(change[0])
+                var delay = redDelay
+                console.log(change)
+                console.log('Expected' + redDelay)
                 setInterval(function () {
-                    var redDelay = 5000 / Math.abs(change[0])
-                    var delay = redDelay
-                    console.log('Expected' + redDelay)
-                    setInterval(function () {
-                        if (change[0] > 0) {
-                            change[0] = change[0] - 1
-                            R++
-                            red.brightness(R)
-                        }
-                        else if (change[0] < 0) {
-                            change[0] = change[0] + 1
-                            R--
-                            red.brightness(R)
-                        }
-                        console.log('Delay: ' + delay)
-                        console.log(R)
-                        console.log('Change remaining' + Math.abs(change[0]))
-                    }, delay)
-                }, 5000)
+                    if (change[0] > 0) {
+                        change[0] = change[0] - 1
+                        R++
+                        red.brightness(R)
+                    }
+                    else if (change[0] < 0) {
+                        change[0] = change[0] + 1
+                        R--
+                        red.brightness(R)
+                    }
+                    console.log('Delay: ' + delay)
+                    console.log(R)
+                    console.log('Change remaining' + Math.abs(change[0]))
+                }, delay)
                 setInterval(function () {
                     var delay = greenDelay
                     setInterval(function () {
