@@ -28,7 +28,7 @@ var client = net.connect(options, function () {
             green = new five.Led(13)
             blue = new five.Led(15)
             randomCrossfade(30)
-            red.write(255);
+            red.brightness(255);
         }); //startup code here
     });
 });
