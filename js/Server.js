@@ -83,8 +83,7 @@ function setRed() {
         R++
         red.write(R)
     }
-    if
-    else(change[0] < 0) {
+    else if (change[0] < 0) {
         change[0] = change[0] + 1
         R--
         red.write(R)
