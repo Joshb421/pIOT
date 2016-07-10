@@ -54,6 +54,7 @@ var client = net.connect(options, function () {
                     console.log(change)
                     console.log('Expected' + redDelay)
                     while (change[0] != 0) {
+                        console.log("test")
                         setTimeout(function () {
                             if (change[0] > 0) {
                                 change[0] = change[0] - 1
