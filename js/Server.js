@@ -47,10 +47,10 @@ var client = net.connect(options, function () {
                 console.log(previous);
                 console.log(current);
                 console.log(change);
-                var redDelay = 5000 / Math.abs(change[0])
                 var greenDelay = 5000 / Math.abs(change[1])
                 var blueDelay = 5000 / Math.abs(change[2])
                 setInterval(function () {
+                    var redDelay = 5000 / Math.abs(change[0])
                     var delay = redDelay
                     console.log('Expected' + redDelay)
                     setInterval(function () {
