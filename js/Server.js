@@ -51,6 +51,7 @@ var client = net.connect(options, function () {
                 var greenDelay = 5000 / Math.abs(change[1])
                 var blueDelay = 5000 / Math.abs(change[2])
                 setInterval(function () {
+                    var delay = redDelay
                     setInterval(function () {
                         if (change[0] > 0) {
                             change[0] = change[0] - 1
@@ -62,11 +63,13 @@ var client = net.connect(options, function () {
                             R--
                             red.brightness(R)
                         }
+                        console.log('Delay: ' + delay)
                         console.log(R)
                         console.log('Change remaining' + Math.abs(change[0]))
-                    }, redDelay)
+                    }, delay)
                 }, 5000)
                 setInterval(function () {
+                    var delay = greenDelay
                     setInterval(function () {
                         if (change[1] > 0) {
                             change[1] = change[1] - 1
@@ -79,9 +82,11 @@ var client = net.connect(options, function () {
                             green.brightness(G)
                         }
                         //console.log(G)
-                    }, greenDelay)
+                        // console.log(delay)
+                    }, delay)
                 }, 5000)
                 setInterval(function () {
+                    var delay = blueDelay
                     setInterval(function () {
                         if (change[2] > 0) {
                             change[2] = change[2] - 1
@@ -93,8 +98,8 @@ var client = net.connect(options, function () {
                             B--
                             blue.brightness(B)
                         }
-                        //console.log(B)
-                    }, blueDelay)
+                        //console.log(delay)
+                    }, delay)
                 }, 5000)
             }, 5000)
         }); //startup code here
