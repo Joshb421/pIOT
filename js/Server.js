@@ -36,9 +36,6 @@ var client = net.connect(options, function () {
                     //    }).then(function (result) {;
                     //        var raw = result.random.data[0]
                     //    });
-                var redDelay = 5000 / Math.abs(change[0])
-                var greenDelay = 5000 / Math.abs(change[1])
-                var blueDelay = 5000 / Math.abs(change[2])
                 var raw = '123456'
                 var RGB = []
                 RGB.push(Math.floor((Math.random() * 254) + 1));
@@ -50,44 +47,55 @@ var client = net.connect(options, function () {
                 console.log(previous);
                 console.log(current);
                 console.log(change);
+                var redDelay = 5000 / Math.abs(change[0])
+                var greenDelay = 5000 / Math.abs(change[1])
+                var blueDelay = 5000 / Math.abs(change[2])
                 setInterval(function () {
-                    if (change[0] > 0) {
-                        change[0] = change[0] - 1
-                        R++
-                        red.brightness(R)
-                    }
-                    else if (change[0] < 0) {
-                        change[0] = change[0] + 1
-                        R--
-                        red.brightness(R)
-                    }
-                    console.log(R)
-                    console.log('Change remaining' + Math.abs(change[0]))
-                }, redDelay) setInterval(function () {
-                    if (change[1] > 0) {
-                        change[1] = change[1] - 1
-                        G++
-                        green.brightness(G)
-                    }
-                    else if (change[1] < 0) {
-                        change[1] = change[1] + 1
-                        G--
-                        green.brightness(G)
-                    }
-                    //console.log(G)
-                }, greenDelay) setInterval(function () {
-                    if (change[2] > 0) {
-                        change[2] = change[2] - 1
-                        B++
-                        blue.brightness(B)
-                    }
-                    else if (change[2] < 0) {
-                        change[2] = change[2] + 1
-                        B--
-                        blue.brightness(B)
-                    }
-                    //console.log(B)
-                }, blueDelay) return
+                    setInterval(function () {
+                        if (change[0] > 0) {
+                            change[0] = change[0] - 1
+                            R++
+                            red.brightness(R)
+                        }
+                        else if (change[0] < 0) {
+                            change[0] = change[0] + 1
+                            R--
+                            red.brightness(R)
+                        }
+                        console.log(R)
+                        console.log('Change remaining' + Math.abs(change[0]))
+                    }, redDelay)
+                }, 5000)
+                setInterval(function () {
+                    setInterval(function () {
+                        if (change[1] > 0) {
+                            change[1] = change[1] - 1
+                            G++
+                            green.brightness(G)
+                        }
+                        else if (change[1] < 0) {
+                            change[1] = change[1] + 1
+                            G--
+                            green.brightness(G)
+                        }
+                        //console.log(G)
+                    }, greenDelay)
+                }, 5000)
+                setInterval(function () {
+                    setInterval(function () {
+                        if (change[2] > 0) {
+                            change[2] = change[2] - 1
+                            B++
+                            blue.brightness(B)
+                        }
+                        else if (change[2] < 0) {
+                            change[2] = change[2] + 1
+                            B--
+                            blue.brightness(B)
+                        }
+                        //console.log(B)
+                    }, blueDelay) return
+                }, 5000)
             }, 5000)
         }); //startup code here
     });
