@@ -59,7 +59,7 @@ var client = net.connect(options, function () {
                         red.brightness(R)
                     }
                     console.log(R)
-                    console.log('Change remaining' + Maths.abs(change[0]))
+                    console.log('Change remaining' + Math.abs(change[0]))
                 }, 5000 / Math.abs(change[0]))
                 setInterval(function () {
                     if (change[1] > 0) {
