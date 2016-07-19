@@ -135,7 +135,7 @@ function hexToRgb(hex) {
 }
 
 function setRed(delay) {
-    for (change[0] > 0) {
+    for (i = change; change[0] > 0; i--) {
         var redInc = setInterval(function () {
             running = true
             console.log("test")
@@ -144,11 +144,10 @@ function setRed(delay) {
             console.log("increasing")
             console.log(R)
             console.log('Change remaining' + Math.abs(change[0]))
-            change[0]++
-                console.log(change)
+            console.log(change)
         }, delay)
     }
-    for (change[0] < 0) {
+    for (x = change[0]; x < 0; x++) {
         var redDec = setInterval(function () {
             running = true
             console.log("decreasing")
