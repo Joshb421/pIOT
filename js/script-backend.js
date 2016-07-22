@@ -2,7 +2,7 @@ var net = require('net');
 var firmata = require('firmata');
 var five = require("johnny-five");
 
-console.log('Hello world')
+console.log('Hello world');
 var options = {
   host: '192.168.1.20',  // IP of ESP board
   port: 3030

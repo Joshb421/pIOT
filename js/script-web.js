@@ -1,11 +1,11 @@
-'use scrict'
+'use scrict';
 
 function wakeup() {}
-var fadePro = 0
-var daysActive = [""]
+var fadePro = 0;
+var daysActive = [""];
 
 function wakeupDays(day) {
-    daysActive.push(day)
+    daysActive.push(day);
     console.log(daysActive)
 }
 
@@ -15,7 +15,7 @@ function writergb(hex) {
 
 function updatergb(mode) { //Mode 1 picker,Mode 2 Crossfade
     var brightness = document.getElementById("brightness").value;
-    var delay = document.getElementById("time").value * 1000 / 360
+    var delay = document.getElementById("time").value * 1000 / 360;
     rgb.intensity(brightness);
     if (mode === 1) {
         var hex = document.getElementById("colorpicker").value;
