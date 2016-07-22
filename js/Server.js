@@ -135,7 +135,7 @@ function hexToRgb(hex) {
 }
 
 function setRed(delay) {
-    for (i = change; change[0] > 0; i--) {
+    for (i = change[0]; i > 0; i--) {
         setTimeout(function () {}, delay)
         running = true;
         console.log("test");
