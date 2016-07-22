@@ -136,26 +136,26 @@ function hexToRgb(hex) {
 
 function setRed(delay) {
     for (i = change[0]; i > 0; i--) {
-        setTimeout(function () {}, delay)
-        running = true;
-        console.log("test");
-        R++;
-        red.brightness(R);
-        console.log("increasing");
-        console.log(R);
-        console.log('Change remaining' + Math.abs(change[0]));
-        console.log(change);
+        setTimeout(function () {
+            console.log("test");
+            R++;
+            red.brightness(R);
+            console.log("increasing");
+            console.log(R);
+            console.log('Change remaining' + Math.abs(change[0]));
+            console.log(change);
+        }, delay)
     }
     for (x = change[0]; x < 0; x++) {
-        setTimeout(function () {}, delay)
-        running = true;
-        console.log("decreasing");
-        R--;
-        red.brightness(R);
-        console.log(R);
-        console.log('Change remaining' + Math.abs(change[0]));
-        change[0]++;
-        console.log(change)
+        setTimeout(function () {
+            console.log("decreasing");
+            R--;
+            red.brightness(R);
+            console.log(R);
+            console.log('Change remaining' + Math.abs(change[0]));
+            change[0]++;
+            console.log(change)
+        }, delay)
     }
     if (change[0 === 0]) {}
 }
