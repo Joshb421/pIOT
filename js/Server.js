@@ -49,13 +49,13 @@ var client = net.connect(options, function () {
                 console.log(current);
 
                 setInterval(function () {
-                    change = c[0]
+                    change = c[0];
                     var delay = change / 5000;
                     for (i = change; i > 0; i--) {
-                        setTimeout(redIncrease(), delay)
+                        setInterval(redIncrease(), delay)
                     }
                     for (x = change; x < 0; x++) {
-                        setTimeout(redDecrease(), delay)
+                        setInterval(redDecrease(), delay)
                     }
                 }, 5000);
                 //                    setInterval(function () {
