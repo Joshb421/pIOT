@@ -52,25 +52,10 @@ var client = net.connect(options, function () {
                     change = c[0]
                     var delay = change / 5000;
                     for (i = change; i > 0; i--) {
-                        setTimeout(function () {
-                            R++;
-                            red.brightness(R);
-                            console.log("increasing");
-                            console.log(R);
-                            console.log('Change remaining' + change);
-                            console.log(change);
-                        }, delay)
+                        setTimeout(redIncrease(), delay)
                     }
                     for (x = change; x < 0; x++) {
-                        setTimeout(function () {
-                            console.log("decreasing");
-                            R--;
-                            red.brightness(R);
-                            console.log(R);
-                            console.log('Change remaining' + change);
-                            change[0]++;
-                            console.log(change)
-                        }, delay)
+                        setTimeout(redDecrease(), delay)
                     }
                 }, 5000);
                 //                    setInterval(function () {
@@ -154,4 +139,19 @@ function hexToRgb(hex) {
     } : null;
 }
 
+function redIncrease() {
+    R++;
+    red.brightness(R);
+    console.log("increasing");
+    console.log(R);
+    console.log('Change remain
+}
+
+function redDecrease() {
+    R++;
+    red.brightness(R);
+    console.log("increasing");
+    console.log(R);
+    console.log('Change remain
+}
 
