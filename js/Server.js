@@ -48,7 +48,31 @@ var client = net.connect(options, function () {
                 console.log(previous);
                 console.log(current);
 
-                setRed(100);
+                setInterval(function () {
+                    change = 1000
+                    var delay = change / 5000;
+                    for (i = change; i > 0; i--) {
+                        setTimeout(function () {
+                            R++;
+                            red.brightness(R);
+                            console.log("increasing");
+                            console.log(R);
+                            console.log('Change remaining' + change);
+                            console.log(change);
+                        }, delay)
+                    }
+                    for (x = change; x < 0; x++) {
+                        setTimeout(function () {
+                            console.log("decreasing");
+                            R--;
+                            red.brightness(R);
+                            console.log(R);
+                            console.log('Change remaining' + change);
+                            change[0]++;
+                            console.log(change)
+                        }, delay)
+                    }
+                }, 5000);
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -130,27 +154,4 @@ function hexToRgb(hex) {
     } : null;
 }
 
-function setRed(change) {
-    var delay = change/5000;
-    for (i = change; i > 0; i--) {
-        setTimeout(function () {
-            R++;
-            red.brightness(R);
-            console.log("increasing");
-            console.log(R);
-            console.log('Change remaining' + change);
-            console.log(change);
-        }, delay)
-    }
-    for (x = change; x < 0; x++) {
-        setTimeout(function () {
-            console.log("decreasing");
-            R--;
-            red.brightness(R);
-            console.log(R);
-            console.log('Change remaining' + change);
-            change[0]++;
-            console.log(change)
-        }, delay)
-    }
-}
+
