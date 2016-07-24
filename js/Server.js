@@ -44,15 +44,13 @@ var client = net.connect(options, function () {
                 RGB.push(Math.floor((Math.random() * 254) + 1));
                 previous = current;
                 current = RGB;
-                change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
+                c = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
                 console.log(previous);
                 console.log(current);
                 console.log(change);
                 var greenDelay = 5000 / Math.abs(change[1]);
                 var blueDelay = 5000 / Math.abs(change[2]);
-                var redDelay = 5000 / Math.abs(change[0]);
-                var delay = redDelay;
-                setRed(redDelay);
+                setRed(100);
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -91,7 +89,7 @@ var client = net.connect(options, function () {
 }); // Other functions in this section
 var previous = [0, 0, 0];
 var current = [0, 0, 0];
-var change = [0, 0, 0];
+var  changee = [0, 0, 0];
 //function randomCrossfade(time) {
 //    console.log("Generating random number")
 //        //    random.generateBlobs({
@@ -134,8 +132,9 @@ function hexToRgb(hex) {
     } : null;
 }
 
-function setRed(delay) {
-    for (i = change[0]; i > 0; i--) {
+function setRed( change) {
+    var delay = change/5000;
+    for (i = change; i > 0; i--) {
         setTimeout(function () {
             R++;
             red.brightness(R);
@@ -144,7 +143,7 @@ function setRed(delay) {
             console.log('Change remaining' + change[0]);
             console.log(change);}, delay)
     }
-    for (x = change[0]; x < 0; x++) {
+    for (x = change; x < 0; x++) {
         setTimeout(function () {
             console.log("decreasing");
             R--;
@@ -155,5 +154,4 @@ function setRed(delay) {
             console.log(change)
         }, delay)
     }
-    if (change[0 === 0]) {}
 }
