@@ -49,7 +49,7 @@ var client = net.connect(options, function () {
                 console.log(current);
 
                 setInterval(function () {
-                    change = 1000
+                    change = c[0]
                     var delay = change / 5000;
                     for (i = change; i > 0; i--) {
                         setTimeout(function () {
