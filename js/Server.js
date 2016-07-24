@@ -47,7 +47,6 @@ var client = net.connect(options, function () {
                 c = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
                 console.log(previous);
                 console.log(current);
-                console.log(change);
                 var greenDelay = 5000 / Math.abs(change[1]);
                 var blueDelay = 5000 / Math.abs(change[2]);
                 setRed(100);
@@ -140,8 +139,9 @@ function setRed(change) {
             red.brightness(R);
             console.log("increasing");
             console.log(R);
-            console.log('Change remaining' + change[0]);
-            console.log(change);}, delay)
+            console.log('Change remaining' + change);
+            console.log(change);
+        }, delay)
     }
     for (x = change; x < 0; x++) {
         setTimeout(function () {
@@ -149,7 +149,7 @@ function setRed(change) {
             R--;
             red.brightness(R);
             console.log(R);
-            console.log('Change remaining' + change[0]);
+            console.log('Change remaining' + change);
             change[0]++;
             console.log(change)
         }, delay)
