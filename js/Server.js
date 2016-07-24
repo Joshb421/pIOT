@@ -144,14 +144,14 @@ function redIncrease() {
     red.brightness(R);
     console.log("increasing");
     console.log(R);
-    console.log('Change remain
+    console.log('Change remaining ' + i);
 }
 
 function redDecrease() {
-    R++;
+    R--;
     red.brightness(R);
-    console.log("increasing");
+    console.log("Decreasing");
     console.log(R);
-    console.log('Change remain
+    console.log('Change reaming ' + x);
 }
 
