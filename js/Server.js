@@ -132,7 +132,7 @@ function hexToRgb(hex) {
     } : null;
 }
 
-function setRed( change) {
+function setRed(change) {
     var delay = change/5000;
     for (i = change; i > 0; i--) {
         setTimeout(function () {
