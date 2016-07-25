@@ -47,17 +47,18 @@ var client = net.connect(options, function () {
                 c = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
                 console.log(previous);
                 console.log(current);
-
+                hue = 0
                 setInterval(function () {
-                    change = c[0];
-                    var delay = change / 5000;
-                    for (i = change; i > 0; i--) {
-                        setInterval(redIncrease(), delay)
+                    hue++
+                    x = hexToRgb(hue)
+                    red.brightness(RGB[0])
+                    green.brightness(RGB[1])
+                    blue.brightness(RGB[2])
+                    if (hue > 359) {
+                        hue = 0
                     }
-                    for (x = change; x < 0; x++) {
-                        setInterval(redDecrease(), delay)
-                    }
-                }, 5000);
+                }, 5000 / 360)
+
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -122,11 +123,12 @@ var  changee = [0, 0, 0];
 var R = 0;
 var G = 0;
 var B = 0;
-
-function rgbToArray(hex) {
-    RGB.push(hexToRgb(hex).r);
-    RGB.push(hexToRgb(hex).g);
-    RGB.push(hexToRgb(hex).b);
+var RGB = []
+function hsvToArray(hsv) {
+    RGB = []
+    RGB.push(HSVtoRGB(hsv, 1, 1).r);
+    RGB.push(HSVtoRGB(hsv, 1, 1).g);
+    RGB.push(HSVtoRGB(hsv, 1, 1).b);
     return RGB;
 }
 
@@ -138,20 +140,39 @@ function hexToRgb(hex) {
         , b: parseInt(result[3], 16)
     } : null;
 }
-
-function redIncrease() {
-    R++;
-    red.brightness(R);
-    console.log("increasing");
-    console.log(R);
-    console.log('Change remaining ' + i);
+function HSVtoRGB(h, s, v) {
+    var r, g, b, i, f, p, q, t;
+    if (arguments.length === 1) {
+        s = h.s, v = h.v, h = h.h;
+    }
+    i = Math.floor(h * 6);
+    f = h * 6 - i;
+    p = v * (1 - s);
+    q = v * (1 - f * s);
+    t = v * (1 - (1 - f) * s);
+    switch (i % 6) {
+        case 0:
+            r = v, g = t, b = p;
+            break;
+        case 1:
+            r = q, g = v, b = p;
+            break;
+        case 2:
+            r = p, g = v, b = t;
+            break;
+        case 3:
+            r = p, g = q, b = v;
+            break;
+        case 4:
+            r = t, g = p, b = v;
+            break;
+        case 5:
+            r = v, g = p, b = q;
+            break;
+    }
+    return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+    };
 }
-
-function redDecrease() {
-    R--;
-    red.brightness(R);
-    console.log("Decreasing");
-    console.log(R);
-    console.log('Change reaming ' + x);
-}
-
