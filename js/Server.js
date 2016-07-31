@@ -194,8 +194,8 @@ function crossfade(on) {
                 hue = 0
             }
         }, 5000 / 360);
-    else
-        {
+    }
+    else {
             red.off();
             green.off();
             blue.off();
