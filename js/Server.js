@@ -178,7 +178,7 @@ function HSVtoRGB(h, s, v) {
 
 function crossfade(on) {
     hue = 0;
-    if (state == true) {
+    if (on == true) {
         setInterval(function () {
             hue++;
             x = hexToRgb(hue);
