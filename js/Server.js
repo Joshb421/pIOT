@@ -53,7 +53,7 @@ var client = net.connect(options, function () {
                 if (hue > 359) {
                     hue = 0
                 }
-            }, 5000 / 1440;
+            }, 5000 / 1440);
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
