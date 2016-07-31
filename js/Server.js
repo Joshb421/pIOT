@@ -39,7 +39,7 @@ var client = net.connect(options, function () {
                 //        var raw = result.random.data[0]
                 //    });
                 var RGB = [];
-
+            var hue = 0
             setInterval(function () {
                 console.log(hue);
                 hue++;
