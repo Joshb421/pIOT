@@ -181,7 +181,8 @@ function crossfade(on) {
     if (on == true) {
         setInterval(function () {
             hue++;
-            x = hexToRgb(hue);
+            x = hsvToArray(hue);
+
             console.log(RGB);
             red.brightness(RGB[0]);
             green.brightness(RGB[1]);
