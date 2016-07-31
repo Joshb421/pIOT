@@ -48,8 +48,8 @@ var client = net.connect(options, function () {
                 // G = hsl.toRgb().g;
                 // B = hsl.toRgb().b;
                 // console.log(R, G, B);
-                console.log(hsl.toRgb());
-                rgb.color(hsl.toRgb());
+                console.log(hsl.toHex());
+                rgb.color(hsl.toHex());
                 if (hue > 359) {
                     hue = 0
                 }
