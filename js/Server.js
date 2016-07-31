@@ -5,8 +5,6 @@ var five = require("johnny-five");
 var soc = require('socket.io');
 var sleep = require('sleep');
 var delayed = require('delayed');
-var app = require('http').createServer(handler);
-var io = require('socket.io')(app);
 var fs = require('fs');
 
 app.listen(80);
