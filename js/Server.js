@@ -44,10 +44,13 @@ var client = net.connect(options, function () {
             setInterval(function () {
                 console.log(hue);
                 hue++;
-                hsvToArray(hue);
-                red.brightness(RGB[0]);
-                green.brightness(RGB[1]);
-                blue.brightness(RGB[2]);
+                R = HSVtoRGB(hue, 1, 1).r;
+                G = HSVtoRGB(hue, 1, 1).g;
+                B = HSVtoRGB(hue, 1, 1).b;
+                console.log(R, G, B);
+                red.brightness(R);
+                green.brightness(G);
+                blue.brightness(B);
                 if (hue > 359) {
                     hue = 0
                 }
@@ -112,18 +115,18 @@ var  changee = [0, 0, 0];
 //    console.log(change);
 //    return
 //}
-
-function hsvToArray(hsv) {
-    RGB = [];
-    console.log(RGB);
-    console.log(hsv);
-    RGB.push(HSVtoRGB(hsv, 1, 1).r);
-    RGB.push(HSVtoRGB(hsv, 1, 1).g);
-    RGB.push(HSVtoRGB(hsv, 1, 1).b);
-    console.log(RGB);
-    console.log('done');
-    return RGB;
-}
+//
+// function hsvToArray(hsv) {
+//     RGB = [];
+//     console.log(RGB);
+//     console.log(hsv);
+//     RGB.push(HSVtoRGB(hue, 1, 1).r);
+//     RGB.push(HSVtoRGB(hue, 1, 1).g);
+//     RGB.push(HSVtoRGB(hue, 1, 1).b);
+//     console.log(RGB);
+//     console.log('done');
+//     return RGB;
+// }
 
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
