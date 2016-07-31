@@ -166,15 +166,15 @@ function HSVtoRGB(h, s, v) {
     };
 }
 
-app.post('/crossfade', function (req, res) {
-    var response = req.body;
-    console.log('Request received at:', +response.sent);
-    console.log('Request state:', +response.state);
-
-
-    led.color(response.color);
-    res.send('LED request successful!');
-});
+// app.post('/crossfade', function (req, res) {
+//     var response = req.body;
+//     console.log('Request received at:', +response.sent);
+//     console.log('Request state:', +response.state);
+//
+//
+//     led.color(response.color);
+//     res.send('LED request successful!');
+// });
 
 function crossfade(on) {
     hue = 0;

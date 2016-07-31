@@ -39,8 +39,8 @@
       <file leaf-file-name="Server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="215">
+              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
               <folding>
                 <element signature="e#1852#1899#0" expanded="false" />
               </folding>
@@ -274,7 +274,7 @@
       <workItem from="1469418165127" duration="2084000" />
       <workItem from="1469495211165" duration="2654000" />
       <workItem from="1469667762460" duration="3735000" />
-      <workItem from="1469924723642" duration="1610000" />
+      <workItem from="1469924723642" duration="1830000" />
     </task>
     <task id="LOCAL-00001" summary="d">
       <created>1469321762164</created>
@@ -388,11 +388,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469925831513</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="&#10;fg">
+      <created>1469926353140</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1469926353140</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19623000" />
+    <option name="totallyTimeSpent" value="19843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -644,8 +651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="215">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
           <folding>
             <element signature="e#1852#1899#0" expanded="false" />
           </folding>
