@@ -42,7 +42,7 @@ var client = net.connect(options, function () {
             var hue = 0
             setInterval(function () {
                 console.log(hue);
-                hue = hue + 0.25;
+                hue = hue + 0.23529411764;
                 var hsl = tinycolor({h: hue, s: 100, v: 100});
                 // R = hsl.toRgb().r;
                 // G = hsl.toRgb().g;
@@ -53,7 +53,7 @@ var client = net.connect(options, function () {
                 if (hue > 359) {
                     hue = 0
                 }
-            }, 5000 / 1440);
+            }, 5000 / 1530);
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {

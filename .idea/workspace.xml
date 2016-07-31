@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5397ff-d3fe-4342-8709-a434cd074dfc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Server.js" afterPath="$PROJECT_DIR$/js/Server.js" />
     </list>
     <ignored path="pIOT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,10 +39,10 @@
       <file leaf-file-name="Server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+            <state relative-caret-position="317">
+              <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
               <folding>
-                <element signature="e#1894#1941#0" expanded="false" />
+                <element signature="e#1903#1950#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -273,7 +274,7 @@
       <workItem from="1469418165127" duration="2084000" />
       <workItem from="1469495211165" duration="2654000" />
       <workItem from="1469667762460" duration="3735000" />
-      <workItem from="1469924723642" duration="7621000" />
+      <workItem from="1469924723642" duration="8032000" />
     </task>
     <task id="LOCAL-00001" summary="d">
       <created>1469321762164</created>
@@ -513,11 +514,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469957699309</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="&#10;j">
+      <created>1469957854336</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1469957854336</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25634000" />
+    <option name="totallyTimeSpent" value="26045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -566,7 +574,8 @@
     <MESSAGE value="&#10;&#10;" />
     <MESSAGE value="&#10;&#10;jjjjjjjjjj" />
     <MESSAGE value="j" />
-    <option name="LAST_COMMIT_MESSAGE" value="j" />
+    <MESSAGE value="&#10;j" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;j" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -590,7 +599,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1894#1941#0" expanded="false" />
+            <element signature="e#1903#1950#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -632,7 +641,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1894#1941#0" expanded="false" />
+            <element signature="e#1903#1950#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -674,7 +683,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1894#1941#0" expanded="false" />
+            <element signature="e#1903#1950#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -700,7 +709,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1894#1941#0" expanded="false" />
+            <element signature="e#1903#1950#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -726,7 +735,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1894#1941#0" expanded="false" />
+            <element signature="e#1903#1950#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -772,10 +781,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+        <state relative-caret-position="317">
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
           <folding>
-            <element signature="e#1894#1941#0" expanded="false" />
+            <element signature="e#1903#1950#0" expanded="false" />
           </folding>
         </state>
       </provider>
