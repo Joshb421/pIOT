@@ -5,7 +5,7 @@ var five = require("johnny-five");
 var soc = require('socket.io');
 var sleep = require('sleep');
 var delayed = require('delayed');
-var app = require('http').createServer(handler)
+var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
 var fs = require('fs');
 
@@ -51,7 +51,7 @@ var client = net.connect(options, function () {
                 c = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
                 console.log(previous);
                 console.log(current);
-            crossfade(true)
+            crossfade(true);
 
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
@@ -186,7 +186,7 @@ function crossfade(on) {
         setInterval(function () {
             hue++;
             x = hexToRgb(hue);
-            console.log(RGB)
+            console.log(RGB);
             red.brightness(RGB[0]);
             green.brightness(RGB[1]);
             blue.brightness(RGB[2]);
@@ -201,4 +201,3 @@ function crossfade(on) {
             blue.off();
         }
     }
-}
