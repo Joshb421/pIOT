@@ -50,7 +50,7 @@ var client = net.connect(options, function () {
                 // console.log(R, G, B);
                 console.log(hsl.toHex());
                 rgb.color(hsl.toHex());
-                if (hue > 359) {
+                if (hue > 360.1) {
                     hue = 0
                 }
             }, 5000 / 1530);
