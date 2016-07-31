@@ -45,7 +45,6 @@ var client = net.connect(options, function () {
                 console.log(hue);
                 hue++;
                 hsvToArray(hue);
-                console.log(RGB);
                 red.brightness(RGB[0]);
                 green.brightness(RGB[1]);
                 blue.brightness(RGB[2]);
@@ -116,9 +115,13 @@ var  changee = [0, 0, 0];
 
 function hsvToArray(hsv) {
     RGB = [];
+    console.log(RGB);
+    console.log(hsv);
     RGB.push(HSVtoRGB(hsv, 1, 1).r);
     RGB.push(HSVtoRGB(hsv, 1, 1).g);
     RGB.push(HSVtoRGB(hsv, 1, 1).b);
+    console.log(RGB);
+    console.log('done');
     return RGB;
 }
 
