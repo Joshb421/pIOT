@@ -39,17 +39,10 @@ var client = net.connect(options, function () {
                 //        var raw = result.random.data[0]
                 //    });
                 var RGB = [];
-                RGB.push(Math.floor((Math.random() * 254) + 1));
-                RGB.push(Math.floor((Math.random() * 254) + 1));
-                RGB.push(Math.floor((Math.random() * 254) + 1));
-                previous = current;
-                current = RGB;
-                c = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
-                console.log(previous);
-                console.log(current);
+
             var hue = 0;
             setInterval(function () {
-                console.log(hue)
+                console.log(hue);
                 hue++;
                 hsvToArray(hue);
                 console.log(RGB);
@@ -120,10 +113,7 @@ var  changee = [0, 0, 0];
 //    console.log(change);
 //    return
 //}
-var R = 0;
-var G = 0;
-var B = 0;
-var RGB = [];
+
 function hsvToArray(hsv) {
     RGB = [];
     RGB.push(HSVtoRGB(hsv, 1, 1).r);
