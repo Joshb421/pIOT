@@ -10,7 +10,7 @@ var io = require('socket.io')(app);
 var fs = require('fs');
 
 app.listen(80);
-0 -//var RandomOrg = require('random-org');
+//var RandomOrg = require('random-org');
 //var random = new RandomOrg({
 //    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
 //});
