@@ -47,8 +47,18 @@ var client = net.connect(options, function () {
                 c = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
                 console.log(previous);
                 console.log(current);
-            crossfade(true);
-
+            var hue = 0;
+            setInterval(function () {
+                hue++;
+                hsvToArray(hue);
+                console.log(RGB);
+                red.brightness(RGB[0]);
+                green.brightness(RGB[1]);
+                blue.brightness(RGB[2]);
+                if (hue > 359) {
+                    hue = 0
+                }
+            }, 5000 / 360);
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -176,18 +186,4 @@ function HSVtoRGB(h, s, v) {
 //     res.send('LED request successful!');
 // });
 
-function crossfade(on) {
-    hue = 0;
-        setInterval(function () {
-            hue++;
-            hsvToArray(hue);
-            console.log(RGB);
-            red.brightness(RGB[0]);
-            green.brightness(RGB[1]);
-            blue.brightness(RGB[2]);
-            if (hue > 359) {
-                hue = 0
-            }
-        }, 5000 / 360);
 
-}
