@@ -49,6 +49,7 @@ var client = net.connect(options, function () {
                 console.log(current);
             var hue = 0;
             setInterval(function () {
+                console.log(hue)
                 hue++;
                 hsvToArray(hue);
                 console.log(RGB);
