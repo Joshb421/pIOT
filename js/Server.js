@@ -5,7 +5,9 @@ var five = require("johnny-five");
 var soc = require('socket.io');
 var sleep = require('sleep');
 var delayed = require('delayed');
+var tinycolor = require("tinycolor2");
 var fs = require('fs');
+
 //var RandomOrg = require('random-org');
 //var random = new RandomOrg({
 //    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
@@ -27,9 +29,7 @@ var client = net.connect(options, function () {
         board.on("ready", function () {
             status = new five.Led(14);
             status.on();
-            red = new five.Led(12);
-            green = new five.Led(13);
-            blue = new five.Led(15);
+            rgb = new five.Led.RGB([12, 13, 15])
                 console.log("Generating random number");
                 //    random.generateBlobs({
                 //        size: 24
@@ -40,17 +40,16 @@ var client = net.connect(options, function () {
                 //    });
                 var RGB = [];
 
-            var hue = 0;
             setInterval(function () {
                 console.log(hue);
                 hue++;
-                R = HSVtoRGB(hue, 1, 1).r;
-                G = HSVtoRGB(hue, 1, 1).g;
-                B = HSVtoRGB(hue, 1, 1).b;
-                console.log(R, G, B);
-                red.brightness(R);
-                green.brightness(G);
-                blue.brightness(B);
+                var hsl = tinycolor("hsv(hue, 100%, 100%)");
+                // R = hsl.toRgb().r;
+                // G = hsl.toRgb().g;
+                // B = hsl.toRgb().b;
+                // console.log(R, G, B);
+                console.log(hsl.toRgb());
+                rgb.color(hsl.toRgb());
                 if (hue > 359) {
                     hue = 0
                 }
