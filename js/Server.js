@@ -178,7 +178,6 @@ function HSVtoRGB(h, s, v) {
 
 function crossfade(on) {
     hue = 0;
-    if (on == true) {
         setInterval(function () {
             hue++;
             hsvToArray(hue);
@@ -190,10 +189,5 @@ function crossfade(on) {
                 hue = 0
             }
         }, 5000 / 360);
-    }
-    else {
-            red.off();
-            green.off();
-            blue.off();
-        }
-    }
+
+}
