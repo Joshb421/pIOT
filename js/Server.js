@@ -43,7 +43,7 @@ var client = net.connect(options, function () {
             setInterval(function () {
                 console.log(hue);
                 hue++;
-                var hsl = tinycolor("hsv(hue, 100%, 100%)");
+                var hsl = tinycolor({h: hue, s: 100, v: 100});
                 // R = hsl.toRgb().r;
                 // G = hsl.toRgb().g;
                 // B = hsl.toRgb().b;
