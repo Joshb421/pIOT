@@ -5,7 +5,12 @@ var five = require("johnny-five");
 var soc = require('socket.io');
 var sleep = require('sleep');
 var delayed = require('delayed');
-//var RandomOrg = require('random-org');
+var app = require('http').createServer(handler)
+var io = require('socket.io')(app);
+var fs = require('fs');
+
+app.listen(80);
+0 -//var RandomOrg = require('random-org');
 //var random = new RandomOrg({
 //    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
 //});
@@ -29,7 +34,6 @@ var client = net.connect(options, function () {
             red = new five.Led(12);
             green = new five.Led(13);
             blue = new five.Led(15);
-            setInterval(function () {
                 console.log("Generating random number");
                 //    random.generateBlobs({
                 //        size: 24
@@ -47,17 +51,7 @@ var client = net.connect(options, function () {
                 c = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
                 console.log(previous);
                 console.log(current);
-                hue = 0
-                setInterval(function () {
-                    hue++
-                    x = hexToRgb(hue)
-                    red.brightness(RGB[0])
-                    green.brightness(RGB[1])
-                    blue.brightness(RGB[2])
-                    if (hue > 359) {
-                        hue = 0
-                    }
-                }, 5000 / 360)
+            crossfade(true)
 
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
@@ -91,7 +85,6 @@ var client = net.connect(options, function () {
                 //                            }
                 //                            //console.log(delay)
                 //                        }, delay)
-            }, 5000)
         });
     });
 }); // Other functions in this section
@@ -123,9 +116,9 @@ var  changee = [0, 0, 0];
 var R = 0;
 var G = 0;
 var B = 0;
-var RGB = []
+var RGB = [];
 function hsvToArray(hsv) {
-    RGB = []
+    RGB = [];
     RGB.push(HSVtoRGB(hsv, 1, 1).r);
     RGB.push(HSVtoRGB(hsv, 1, 1).g);
     RGB.push(HSVtoRGB(hsv, 1, 1).b);
@@ -175,4 +168,37 @@ function HSVtoRGB(h, s, v) {
         g: Math.round(g * 255),
         b: Math.round(b * 255)
     };
+}
+
+app.post('/crossfade', function (req, res) {
+    var response = req.body;
+    console.log('Request received at:', +response.sent);
+    console.log('Request state:', +response.state);
+
+
+    led.color(response.color);
+    res.send('LED request successful!');
+});
+
+function crossfade(on) {
+    hue = 0;
+    if (state == true) {
+        setInterval(function () {
+            hue++;
+            x = hexToRgb(hue);
+            console.log(RGB)
+            red.brightness(RGB[0]);
+            green.brightness(RGB[1]);
+            blue.brightness(RGB[2]);
+            if (hue > 359) {
+                hue = 0
+            }
+        }, 5000 / 360);
+    else
+        {
+            red.off();
+            green.off();
+            blue.off();
+        }
+    }
 }
