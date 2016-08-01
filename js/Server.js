@@ -7,6 +7,29 @@ var sleep = require('sleep');
 var delayed = require('delayed');
 var tinycolor = require("tinycolor2");
 var fs = require('fs');
+var app = require('http').createServer(handler)
+var io = require('socket.io')(app);
+app.listen(80);
+
+function handler(req, res) {
+    fs.readFile(__dirname + '/index.html',
+        function (err, data) {
+            if (err) {
+                res.writeHead(500);
+                return res.end('Error loading index.html');
+            }
+
+            res.writeHead(200);
+            res.end(data);
+        });
+}
+
+io.on('connection', function (socket) {
+    socket.emit('news', {hello: 'world'});
+    socket.on('my other event', function (data) {
+        console.log(data);
+    });
+});
 
 //var RandomOrg = require('random-org');
 //var random = new RandomOrg({
@@ -24,36 +47,16 @@ var client = net.connect(options, function () {
         esp.isReady = true;
         var board = new five.Board({
             io: esp
-            , repl: false
+            , repl: true
         });
         board.on("ready", function () {
             status = new five.Led(14);
             status.on();
             rgb = new five.Led.RGB([12, 13, 15])
-                console.log("Generating random number");
-                //    random.generateBlobs({
-                //        size: 24
-                //        , n: 1
-                //        , format: 'hex'
-                //    }).then(function (result) {;
-                //        var raw = result.random.data[0]
-                //    });
                 var RGB = [];
-            var hue = 0
-            setInterval(function () {
-                console.log(hue);
-                hue = hue + 0.23529411764;
-                var hsl = tinycolor({h: hue, s: 100, v: 100});
-                // R = hsl.toRgb().r;
-                // G = hsl.toRgb().g;
-                // B = hsl.toRgb().b;
-                // console.log(R, G, B);
-                console.log(hsl.toHex());
-                rgb.color(hsl.toHex());
-                if (hue > 360.1) {
-                    hue = 0
-                }
-            }, 5000 / 1530);
+            var hue = 0;
+            RGBStrip(1, true, 30, null)
+
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -88,89 +91,7 @@ var client = net.connect(options, function () {
                 //                        }, delay)
         });
     });
-}); // Other functions in this section
-var previous = [0, 0, 0];
-var current = [0, 0, 0];
-var  changee = [0, 0, 0];
-//function randomCrossfade(time) {
-//    console.log("Generating random number")
-//        //    random.generateBlobs({
-//        //        size: 24
-//        //        , n: 1
-//        //        , format: 'hex'
-//        //    }).then(function (result) {;
-//        //        var raw = result.random.data[0]
-//        //    });
-//    var raw = '123456'
-//    var RGB = []
-//    RGB.push(Math.floor((Math.random() * 254) + 1));
-//    RGB.push(Math.floor((Math.random() * 254) + 1));
-//    RGB.push(Math.floor((Math.random() * 254) + 1));
-//    previous = current
-//    current = RGB
-//    var change = [(current[0] - previous[0]), (current[1] - previous[1]), (current[2] - previous[2])];
-//    console.log(previous);
-//    console.log(current);
-//    console.log(change);
-//    return
-//}
-//
-// function hsvToArray(hsv) {
-//     RGB = [];
-//     console.log(RGB);
-//     console.log(hsv);
-//     RGB.push(HSVtoRGB(hue, 1, 1).r);
-//     RGB.push(HSVtoRGB(hue, 1, 1).g);
-//     RGB.push(HSVtoRGB(hue, 1, 1).b);
-//     console.log(RGB);
-//     console.log('done');
-//     return RGB;
-// }
-
-function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16)
-        , g: parseInt(result[2], 16)
-        , b: parseInt(result[3], 16)
-    } : null;
-}
-function HSVtoRGB(h, s, v) {
-    var r, g, b, i, f, p, q, t;
-    if (arguments.length === 1) {
-        s = h.s, v = h.v, h = h.h;
-    }
-    i = Math.floor(h * 6);
-    f = h * 6 - i;
-    p = v * (1 - s);
-    q = v * (1 - f * s);
-    t = v * (1 - (1 - f) * s);
-    switch (i % 6) {
-        case 0:
-            r = v, g = t, b = p;
-            break;
-        case 1:
-            r = q, g = v, b = p;
-            break;
-        case 2:
-            r = p, g = v, b = t;
-            break;
-        case 3:
-            r = p, g = q, b = v;
-            break;
-        case 4:
-            r = t, g = p, b = v;
-            break;
-        case 5:
-            r = v, g = p, b = q;
-            break;
-    }
-    return {
-        r: Math.round(r * 255),
-        g: Math.round(g * 255),
-        b: Math.round(b * 255)
-    };
-}
+});
 
 // app.post('/crossfade', function (req, res) {
 //     var response = req.body;
@@ -181,5 +102,46 @@ function HSVtoRGB(h, s, v) {
 //     led.color(response.color);
 //     res.send('LED request successful!');
 // });
+var running = false;
+function RGBStrip(mode, time, hex, brightness) {
+    if (mode == 0) {
+        rgb.off()
+    }
+    while (mode == 1) {
+        runnning = true;
+        setInterval(function () {
+            console.log(hue);
+            hue = hue + 0.23529411764;
+            var hsl = tinycolor({h: hue, s: 100, v: 100});
+            console.log(hsl.toHex());
+            hex = hsl.toHex();
+            rgb.color(hex);
+            if (hue >= 360) {
+                hue = 0
+            }
+        }, time / 1530000);
 
+    }
+    if (mode == 2) {
+        rgb.color(hex)
+    }
+    setInterval(function () {
+        console.log(hue);
+        hue = hue + 0.23529411764;
+        var hsl = tinycolor({h: hue, s: 100, v: 100});
+        // R = hsl.toRgb().r;
+        // G = hsl.toRgb().g;
+        // B = hsl.toRgb().b;
+        // console.log(R, G, B);
+        console.log(hsl.toHex());
+        rgb.color(hsl.toHex());
+        if (hue >= 360) {
+            hue = 0
+        }
+    }, 5000 / 1530);
+}
 
+function wakeUp(days, time) {
+    set
+    timeout
+}
