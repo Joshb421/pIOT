@@ -148,6 +148,9 @@ function wakeUp(days, hour, minute) {
                 RGB[1]++;
                 console.log(RGB);
                 RGBStrip(2, null, RGB, 100);
+                if (RGB[0] > 254) {
+                    clearInterval()
+                }
             }, 400);
 
         }
