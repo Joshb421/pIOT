@@ -105,7 +105,7 @@ var hue = 0;
 
 
 function RGBStrip(mode, time, hex, brightness) {
-    rgb.intensity(brightness)
+    rgb.intensity(brightness);
     if (mode == 0) {
         rgb.off()
     }
@@ -134,12 +134,13 @@ function wakeUp(days, hour, minute) {
     var enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
     var initialDelay = 0;
     if (enableTime > target) {
+        console.log(enableTime)
         initialDelay = enableTime - target
+        console.log(initialDelay)
     }
     else if (enableTime < target) {
         intialDelay = 86400000 + enableTime - target
     }
-    console.log(initialDelay / 1000 + " Seconds until activation")
     setTimeout(function () {
         if (days [d.getDay()] == true) {
             setInterval(function () {
