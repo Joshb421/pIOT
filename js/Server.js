@@ -155,13 +155,13 @@ function wakeUp(days, hour, minute) {
     setInterval(function () {
         running = true;
         if (days [d.getDay()] == true) {
-            setInterval(function () {
+            var t = setInterval(function () {
                 RGB[0]++;
                 RGB[1]++;
                 console.log(RGB);
                 RGBStrip(2, null, RGB, 100);
                 if (RGB[0] > 254) {
-                    clearInterval()
+                    clearInterval(t)
                 }
             }, 400);
             setTimeout(function () {
