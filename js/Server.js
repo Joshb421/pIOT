@@ -146,7 +146,7 @@ function wakeUp(days, hour, minute) {
                 RGB[0]++;
                 RGB[1]++;
                 console.log(RGB);
-                RGBstrip(2, null, null, RGB);
+                RGBStrip(2, null, null, RGB);
             }, 400);
 
         }
@@ -158,14 +158,14 @@ function wakeUp(days, hour, minute) {
                 RGB[0]++;
                 RGB[1]++;
                 console.log(RGB);
-                //RGBStrip(2, null, RGB, 100);
+                RGBStrip(2, null, RGB, 100);
                 if (RGB[0] > 254) {
                     clearInterval()
                 }
             }, 400);
             setTimeout(function () {
                 RGB = [0, 0, 0];
-                //RGBStrip(2, null, RGB, 100);
+                RGBStrip(2, null, RGB, 100);
 
             })
 
