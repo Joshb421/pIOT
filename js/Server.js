@@ -159,6 +159,7 @@ function wakeUp(days, hour, minute) {
             RGB = [0, 0, 0]
             for (; RGB[1] > 254; ;
         )
+        )
             {
                 var t = setInterval(function () {
                     RGB[0]++;
