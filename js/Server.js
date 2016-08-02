@@ -176,7 +176,7 @@ function wakeUp(days, hour, minute) {
 
             }, 120000)
 
-        }
+    }, 86400000)
 
     }, 86400000)
 }
