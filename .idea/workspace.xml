@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5397ff-d3fe-4342-8709-a434cd074dfc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Server.js" afterPath="$PROJECT_DIR$/js/Server.js" />
     </list>
     <ignored path="pIOT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +40,10 @@
       <file leaf-file-name="Server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
+            <state relative-caret-position="674">
               <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
               <folding>
                 <element signature="e#1672#1719#0" expanded="false" />
-                <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -282,14 +280,7 @@
       <workItem from="1469667762460" duration="3735000" />
       <workItem from="1469924723642" duration="10130000" />
       <workItem from="1470022203072" duration="6770000" />
-      <workItem from="1470100158994" duration="12562000" />
-    </task>
-    <task id="LOCAL-00004" summary="&#10;s&#10;">
-      <created>1469325285553</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1469325285553</updated>
+      <workItem from="1470100158994" duration="12677000" />
     </task>
     <task id="LOCAL-00005" summary="&#10;s&#10;">
       <created>1469325558065</created>
@@ -627,11 +618,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470129101790</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Added natural wake up - To be tested">
+      <created>1470129474666</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1470129474666</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47475000" />
+    <option name="totallyTimeSpent" value="47590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -717,7 +715,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
-            <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -764,7 +761,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
-            <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -811,7 +807,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
-            <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -858,7 +853,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
-            <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -905,7 +899,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
-            <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -934,7 +927,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
-            <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -963,7 +955,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
-            <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1021,11 +1012,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
+        <state relative-caret-position="674">
           <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
-            <marker date="1470129469490" expanded="true" signature="4660:5954" ph="{...}" />
           </folding>
         </state>
       </provider>
