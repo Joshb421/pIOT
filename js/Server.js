@@ -149,34 +149,14 @@ function wakeUp(days, hour, minute) {
                     RGB[1]++;
                     console.log(RGB);
                     RGBStrip(2, null, RGB, 100);
-                }, 400);
+                }, 4000);
+                setTimeout(function () {
+                    RGB = [0, 0, 0];
+                    RGBStrip(2, null, RGB, 100);
+
+                }, 120000)
             }
         }
     }, initialDelay);
-    setInterval(function () {
-        running = true;
-        if (days [d.getDay()] == true) {
 
-            RGB = [0, 0, 0]
-            for (; RGB[1] > 254;)
-            {
-                var t = setInterval(function () {
-                    RGB[0]++;
-                    RGB[1]++;
-                    console.log(RGB);
-                    RGBStrip(2, null, RGB, 100);
-                }, 4000);
-
-            }
-                }
-
-            setTimeout(function () {
-                RGB = [0, 0, 0];
-                RGBStrip(2, null, RGB, 100);
-
-            }, 120000)
-
-    }, 86400000)
-
-    }, 86400000)
 }

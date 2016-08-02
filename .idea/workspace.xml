@@ -41,8 +41,8 @@
       <file leaf-file-name="Server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="143" column="15" selection-start-line="143" selection-start-column="15" selection-end-line="143" selection-end-column="15" />
+            <state relative-caret-position="487">
+              <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
               <folding>
                 <element signature="e#1672#1719#0" expanded="false" />
               </folding>
@@ -281,14 +281,7 @@
       <workItem from="1469667762460" duration="3735000" />
       <workItem from="1469924723642" duration="10130000" />
       <workItem from="1470022203072" duration="6770000" />
-      <workItem from="1470100158994" duration="13332000" />
-    </task>
-    <task id="LOCAL-00010" summary="Working random">
-      <created>1469418481057</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1469418481057</updated>
+      <workItem from="1470100158994" duration="13705000" />
     </task>
     <task id="LOCAL-00011" summary="HSV crossfade">
       <created>1469419728769</created>
@@ -626,11 +619,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470130059343</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Added natural wake up - To be tested">
+      <created>1470130245659</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1470130245660</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48245000" />
+    <option name="totallyTimeSpent" value="48618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1013,8 +1013,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="143" column="15" selection-start-line="143" selection-start-column="15" selection-end-line="143" selection-end-column="15" />
+        <state relative-caret-position="487">
+          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
           </folding>
