@@ -10,7 +10,7 @@ var fs = require('fs');
 var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
 app.listen(80);
-var d = Date();
+var d = new Date();
 function handler(req, res) {
     fs.readFile(__dirname + '/index.html',
         function (err, data) {
