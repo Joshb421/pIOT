@@ -130,11 +130,10 @@ function RGBStrip(mode, time, hex, brightness) {
 }
 
 var initialDelay = 0;
-var enableTime
-var target
+var enableTime;
+var target;
 function wakeUp(days, hour, minute) {
-
-    arget = hour * 3600000 + minute * 60000;
+    target = hour * 3600000 + minute * 60000;
     enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
 
     if (enableTime > target) {
