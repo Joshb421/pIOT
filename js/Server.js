@@ -155,20 +155,24 @@ function wakeUp(days, hour, minute) {
     setInterval(function () {
         running = true;
         if (days [d.getDay()] == true) {
-            var t = setInterval(function () {
-                RGB[0]++;
-                RGB[1]++;
-                console.log(RGB);
-                RGBStrip(2, null, RGB, 100);
-                if (RGB[0] > 254) {
-                    clearInterval(t)
+
+            RGB = [0, 0, 0]
+            for (RGB[1] > 254) {
+                var t = setInterval(function () {
+                    RGB[0]++;
+                    RGB[1]++;
+                    console.log(RGB);
+                    RGBStrip(2, null, RGB, 100);
+                }, 4000);
+
+            }
                 }
-            }, 400);
+
             setTimeout(function () {
                 RGB = [0, 0, 0];
                 RGBStrip(2, null, RGB, 100);
 
-            })
+            }, 120000)
 
         }
 
