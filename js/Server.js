@@ -129,10 +129,14 @@ function RGBStrip(mode, time, hex, brightness) {
     }
 }
 
+var initialDelay = 0;
+var enableTime
+var target
 function wakeUp(days, hour, minute) {
-    var target = hour * 3600000 + minute * 60000;
-    var enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
-    var initialDelay = 0;
+
+    arget = hour * 3600000 + minute * 60000;
+    enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
+
     if (enableTime > target) {
         console.log(enableTime);
         initialDelay = enableTime - target;
@@ -140,7 +144,6 @@ function wakeUp(days, hour, minute) {
     }
     else if (enableTime < target) {
         intialDelay = 86400000 + enableTime - target;
-        console.log(initialDelay)
     }
     setTimeout(function () {
         if (days [d.getDay()] == true) {
