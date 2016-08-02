@@ -138,11 +138,11 @@ function wakeUp(days, hour, minute) {
 
     if (enableTime > target) {
         console.log(enableTime);
-        initialDelay = enableTime - target;
+        initialDelay = enableTime - target - 600000;
         console.log(initialDelay)
     }
     else if (enableTime < target) {
-        intialDelay = 86400000 + enableTime - target;
+        intialDelay = 86400000 + enableTime - target - 600000;
     }
     setTimeout(function () {
         if (days [d.getDay()] == true) {
@@ -160,6 +160,6 @@ function wakeUp(days, hour, minute) {
                 }, 120000)
             }
         }
-    }, initialDelay - 600000);
+    }, initialDelay);
 
 }
