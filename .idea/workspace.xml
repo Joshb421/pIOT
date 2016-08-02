@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e5397ff-d3fe-4342-8709-a434cd074dfc" name="Default" comment="">
+    <list default="true" id="3e5397ff-d3fe-4342-8709-a434cd074dfc" name="Default" comment="Added natural wake up - To be tested">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Server.js" afterPath="$PROJECT_DIR$/js/Server.js" />
     </list>
     <ignored path="pIOT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +41,8 @@
       <file leaf-file-name="Server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+            <state relative-caret-position="453">
+              <caret line="159" column="32" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
               <folding>
                 <element signature="e#1672#1719#0" expanded="false" />
               </folding>
@@ -280,14 +281,7 @@
       <workItem from="1469667762460" duration="3735000" />
       <workItem from="1469924723642" duration="10130000" />
       <workItem from="1470022203072" duration="6770000" />
-      <workItem from="1470100158994" duration="12677000" />
-    </task>
-    <task id="LOCAL-00005" summary="&#10;s&#10;">
-      <created>1469325558065</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1469325558065</updated>
+      <workItem from="1470100158994" duration="12729000" />
     </task>
     <task id="LOCAL-00006" summary="&#10;s&#10;">
       <created>1469326322612</created>
@@ -625,11 +619,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470129474666</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Added natural wake up - To be tested">
+      <created>1470129588468</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1470129588469</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47590000" />
+    <option name="totallyTimeSpent" value="47642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1012,8 +1013,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+        <state relative-caret-position="453">
+          <caret line="159" column="32" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
           <folding>
             <element signature="e#1672#1719#0" expanded="false" />
           </folding>
