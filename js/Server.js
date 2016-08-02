@@ -143,13 +143,14 @@ function wakeUp(days, hour, minute) {
     }
     setTimeout(function () {
         if (days [d.getDay()] == true) {
-            setInterval(function () {
-                RGB[0]++;
-                RGB[1]++;
-                console.log(RGB);
-                RGBStrip(2, null, RGB, 100);
-            }, 400);
-
+            while (RGB[1] > 254) {
+                setInterval(function () {
+                    RGB[0]++;
+                    RGB[1]++;
+                    console.log(RGB);
+                    RGBStrip(2, null, RGB, 100);
+                }, 400);
+            }
         }
     }, initialDelay);
     setInterval(function () {
