@@ -281,14 +281,7 @@
       <workItem from="1469667762460" duration="3735000" />
       <workItem from="1469924723642" duration="10130000" />
       <workItem from="1470022203072" duration="6770000" />
-      <workItem from="1470100158994" duration="13989000" />
-    </task>
-    <task id="LOCAL-00012" summary="HSV crossfade">
-      <created>1469924833667</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1469924833667</updated>
+      <workItem from="1470100158994" duration="14074000" />
     </task>
     <task id="LOCAL-00013" summary="&#10;b">
       <created>1469925248993</created>
@@ -626,11 +619,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470130619026</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Added natural wake up - To be tested">
+      <created>1470130904166</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1470130904166</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48902000" />
+    <option name="totallyTimeSpent" value="48987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
