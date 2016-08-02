@@ -7,10 +7,10 @@ var sleep = require('sleep');
 var delayed = require('delayed');
 var tinycolor = require("tinycolor2");
 var fs = require('fs');
-var app = require('http').createServer(handler)
+var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
 app.listen(80);
-
+var d = Date();
 function handler(req, res) {
     fs.readFile(__dirname + '/index.html',
         function (err, data) {
@@ -52,10 +52,10 @@ var client = net.connect(options, function () {
         board.on("ready", function () {
             status = new five.Led(14);
             status.on();
-            rgb = new five.Led.RGB([12, 13, 15])
-                var RGB = [];
+            rgb = new five.Led.RGB([12, 13, 15]);
+            var RGB = [0, 0, 0];
             var hue = 0;
-            RGBStrip(1, true, 30, null)
+            RGBStrip(1, 30, null, null);
 
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
@@ -103,7 +103,12 @@ var client = net.connect(options, function () {
 //     res.send('LED request successful!');
 // });
 var running = false;
+var RGB = [0, 0, 0];
+var hue = 0;
+
+
 function RGBStrip(mode, time, hex, brightness) {
+    rgb.intensity(brightness)
     if (mode == 0) {
         rgb.off()
     }
@@ -125,23 +130,49 @@ function RGBStrip(mode, time, hex, brightness) {
     if (mode == 2) {
         rgb.color(hex)
     }
-    setInterval(function () {
-        console.log(hue);
-        hue = hue + 0.23529411764;
-        var hsl = tinycolor({h: hue, s: 100, v: 100});
-        // R = hsl.toRgb().r;
-        // G = hsl.toRgb().g;
-        // B = hsl.toRgb().b;
-        // console.log(R, G, B);
-        console.log(hsl.toHex());
-        rgb.color(hsl.toHex());
-        if (hue >= 360) {
-            hue = 0
-        }
-    }, 5000 / 1530);
 }
 
-function wakeUp(days, time) {
-    set
-    timeout
+function wakeUp(days, hour, minute) {
+    var target = hour * 3600000 + minute * 60000;
+    var enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
+    var initialDelay = 0;
+    if (enableTime > target) {
+        initialDelay = enableTime - target
+    }
+    else if (enableTime < target) {
+        intialDelay = 86400000 + enableTime - target
+    }
+    console.log(initialDelay / 1000 + " Seconds until activation")
+    setTimeout(function () {
+        if (days [d.getDay()] == true) {
+            setInterval(function () {
+                RGB[0]++;
+                RGB[1]++;
+                console.log(RGB);
+                RGBstrip(2, null, null, RGB);
+            }, 400);
+
+        }
+    }, initialDelay);
+    setInterval(function () {
+        running = true;
+        if (days [d.getDay()] == true) {
+            setInterval(function () {
+                RGB[0]++;
+                RGB[1]++;
+                console.log(RGB);
+                //RGBStrip(2, null, RGB, 100);
+                if (RGB[0] > 254) {
+                    clearInterval()
+                }
+            }, 400);
+            setTimeout(function () {
+                RGB = [0, 0, 0];
+                //RGBStrip(2, null, RGB, 100);
+
+            })
+
+        }
+
+    }, 86400000)
 }
