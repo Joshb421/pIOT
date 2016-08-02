@@ -53,7 +53,7 @@ var client = net.connect(options, function () {
             status = new five.Led(14);
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
-            wakeUp([true, true, true, true, true, true, true], 19, d.getHours() + 10)
+            wakeUp([true, true, true, true, true, true, true], 19, d.getHours() + 19)
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -134,12 +134,13 @@ function wakeUp(days, hour, minute) {
     var enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
     var initialDelay = 0;
     if (enableTime > target) {
-        console.log(enableTime)
-        initialDelay = enableTime - target
+        console.log(enableTime);
+        initialDelay = enableTime - target;
         console.log(initialDelay)
     }
     else if (enableTime < target) {
-        intialDelay = 86400000 + enableTime - target
+        intialDelay = 86400000 + enableTime - target;
+        console.log(initialDelay)
     }
     setTimeout(function () {
         if (days [d.getDay()] == true) {
@@ -157,6 +158,6 @@ function wakeUp(days, hour, minute) {
                 }, 120000)
             }
         }
-    }, initialDelay);
+    }, initialDelay - 600000);
 
 }
