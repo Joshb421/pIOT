@@ -9,7 +9,7 @@ var tinycolor = require("tinycolor2");
 var fs = require('fs');
 var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
-app.listen(80);
+app.listen(8080);
 var d = new Date();
 function handler(req, res) {
     fs.readFile(__dirname + '/index.html',
