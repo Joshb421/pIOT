@@ -53,9 +53,7 @@ var client = net.connect(options, function () {
             status = new five.Led(14);
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
-            var RGB = [0, 0, 0];
-            var hue = 0;
-            wakeUp([true, true, true, true, true, true, true], 5, 30)
+            wakeUp([true, true, true, true, true, true, true], 18, 30)
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
