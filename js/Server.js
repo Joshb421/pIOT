@@ -47,7 +47,7 @@ var client = net.connect(options, function () {
         esp.isReady = true;
         var board = new five.Board({
             io: esp
-            , repl: true
+            , repl: false
         });
         board.on("ready", function () {
             status = new five.Led(14);
@@ -55,8 +55,7 @@ var client = net.connect(options, function () {
             rgb = new five.Led.RGB([12, 13, 15]);
             var RGB = [0, 0, 0];
             var hue = 0;
-            RGBStrip(1, 30, null, null);
-
+            wakeUp([true, true, true, true, true, true, true], 5, 30)
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
