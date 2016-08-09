@@ -11,6 +11,10 @@ var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
 app.listen(8080);
 var d = new Date();
+require('shelljs/global');
+
+
+
 function handler(req, res) {
     fs.readFile(__dirname + '/index.html',
         function (err, data) {
@@ -130,11 +134,9 @@ function RGBStrip(mode, time, hex, brightness) {
 }
 
 var initialDelay = 0;
-var enableTime;
-var target;
 function wakeUp(days, hour, minute) {
-    target = hour * 3600000 + minute * 60000;
-    enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
+    var target = hour * 3600000 + minute * 60000;
+    var enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
 
     if (enableTime > target) {
         console.log(enableTime);
@@ -156,10 +158,16 @@ function wakeUp(days, hour, minute) {
                 setTimeout(function () {
                     RGB = [0, 0, 0];
                     RGBStrip(2, null, RGB, 100);
-
                 }, 120000)
             }
         }
     }, initialDelay);
+}
 
+function piPower() {
+    console.log('Raspberry pi rebooting')
+    {
+        document.body.style.backgroundColor = #C10C05;
+        document.write("<h1>Reboot Imminent</h1><br>")
+    }
 }
