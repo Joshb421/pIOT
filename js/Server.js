@@ -157,6 +157,7 @@ function wakeUp(days, hour, minute) {
 
     }
     setTimeout(function () {
+        console.log('activated')
         if (days [d.getDay()] == true) {
             while (RGB[1] > 254) {
                 setInterval(function () {
