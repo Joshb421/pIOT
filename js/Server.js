@@ -59,7 +59,7 @@ var client = net.connect(options, function () {
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
             console.log("RGB LED initialized");
-            wakeUp([true, true, true, true, true, true, true], 18, 30);
+            wakeUp([true, true, true, true, true, true, true], 18, 59);
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -173,7 +173,7 @@ function wakeUp(days, hour, minute) {
 }
 
 function piPower() {
-    console.log('Raspberry pi rebooting')
+    console.log('Raspberry pi rebooting');
     {
         document.body.style.backgroundColor = '#C10C05';
         document.write("<h1>Reboot Imminent</h1><br>")
