@@ -146,7 +146,7 @@ function wakeUp(days, hour, minute) {
     if (enableTime > target) {
         console.log(target);
         console.log(enableTime);
-        initialDelay = target - enableTime + 8640000;
+        initialDelay = target - enableTime + 86400000;
         console.log(initialDelay);
     }
     else if (enableTime < target) {
