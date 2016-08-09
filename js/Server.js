@@ -135,7 +135,7 @@ function RGBStrip(mode, time, hex, brightness) {
     }
 }
 
-var initialDelay = 0;
+var delay
 function wakeUp(days, hour, minute) {
     var target = (hour * 3600000 ) + (minute * 60000);
     var enableTime = (d.getHours() * 3600000) + (d.getMinutes() * 60000);
@@ -146,13 +146,13 @@ function wakeUp(days, hour, minute) {
     if (enableTime > target) {
         console.log(target);
         console.log(enableTime);
-        initialDelay = target - enableTime + 86400000;
+        delay = target - enableTime + 86400000;
         console.log(initialDelay);
     }
     else if (enableTime < target) {
         console.log(target);
         console.log(enableTime);
-        intialDelay = target - enableTime;
+        delay = target - enableTime;
         console.log(initialDelay);
 
     }
@@ -172,7 +172,7 @@ function wakeUp(days, hour, minute) {
                 }, 120000)
             }
         }
-    }, initialDelay);
+    }, delay);
 }
 
 function piPower() {
