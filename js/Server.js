@@ -40,7 +40,7 @@ io.on('connection', function (socket) {
 //    apiKey: '119ecf61-1008-4bc6-ae91-30a806ed7b09'
 //});
 var options = {
-    host: '192.168.1.169', // IP of ESP board
+    host: '192.168.1.170', // IP of ESP board
     port: 3030
 };
 var client = net.connect(options, function () {
