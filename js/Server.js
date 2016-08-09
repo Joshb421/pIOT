@@ -59,7 +59,7 @@ var client = net.connect(options, function () {
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
             console.log("RGB LED initialized");
-            wakeUp([true, true, true, true, true, true, true], 19, d.getHours() + 12);
+            wakeUp([true, true, true, true, true, true, true], 19, d.getMinutes() + 12);
                 //                    setInterval(function () {
                 //                        var delay = greenDelay
                 //                        setInterval(function () {
@@ -141,12 +141,14 @@ function wakeUp(days, hour, minute) {
     var enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
 
     if (enableTime > target) {
-        console.log(enableTime);
         initialDelay = enableTime - target - 600000;
         console.log(initialDelay)
     }
     else if (enableTime < target) {
+        console.log(enableTime)
         intialDelay = 86400000 + enableTime - target - 600000;
+        console.log(initialDelay)
+
     }
     setTimeout(function () {
         if (days [d.getDay()] == true) {
