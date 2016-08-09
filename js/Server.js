@@ -11,7 +11,7 @@ var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
 app.listen(8080);
 var d = new Date();
-require('shelljs/global');
+var shell = require('shelljs/global');
 
 
 
