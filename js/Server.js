@@ -47,13 +47,14 @@ var client = net.connect(options, function () {
     var socketClient = this;
     var esp = new firmata.Board(socketClient);
     esp.once('ready', function () {
-        console.log('IO Ready');
+        console.log('ESP Connected');
         esp.isReady = true;
         var board = new five.Board({
             io: esp
             , repl: false
         });
         board.on("ready", function () {
+            console.log("ESP ready");
             status = new five.Led(14);
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
