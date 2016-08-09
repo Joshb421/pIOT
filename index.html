@@ -21,7 +21,7 @@
 
 </head>
 <script>
-    var socket = io('http://192.168.1.101');
+    var socket = io('http://localhost:8080');
     socket.on('news', function (data) {
         console.log(data);
         socket.emit('my other event', {my: 'data'});
