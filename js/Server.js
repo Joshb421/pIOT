@@ -137,7 +137,7 @@ function RGBStrip(mode, time, hex, brightness) {
 
 var initialDelay = 0;
 function wakeUp(days, hour, minute) {
-    var target = (hour * 3600000 ) + ( minute * 60000);
+    var target = (hour * 3600000 ) + (minute * 60000);
     var enableTime = (d.getHours() * 3600000) + (d.getMinutes() * 60000);
     console.log('Target time ' + hour + ':' + minute);
     console.log('Activation time ' + d.getHours() + ':' + d.getMinutes());
@@ -150,8 +150,8 @@ function wakeUp(days, hour, minute) {
         console.log(initialDelay);
     }
     else if (enableTime < target) {
-        console.log(enableTime);
         console.log(target);
+        console.log(enableTime);
         intialDelay = 86400000 + target - enableTime;
         console.log(initialDelay);
 
