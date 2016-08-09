@@ -141,10 +141,14 @@ function wakeUp(days, hour, minute) {
     var enableTime = d.getHours() * 3600000 + d.getMinutes() * 60000;
 
     if (enableTime > target) {
+        console.log(enableTime);
+        console.log(target);
         initialDelay = enableTime - target - 600000;
         console.log(initialDelay);
     }
     else if (enableTime < target) {
+        console.log(enableTime);
+        console.log(target);
         intialDelay = 86400000 + enableTime - target - 600000;
         console.log(initialDelay);
 
