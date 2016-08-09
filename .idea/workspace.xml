@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e5397ff-d3fe-4342-8709-a434cd074dfc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ass/Apollo_15_flag,_rover,_LM,_Irwin.jpg" afterPath="$PROJECT_DIR$/ass/Apollo_15_flag,_rover,_LM,_Irwin.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Server.js" afterPath="$PROJECT_DIR$/js/Server.js" />
     </list>
     <ignored path="pIOT.iws" />
@@ -46,8 +41,8 @@
       <file leaf-file-name="Server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="844">
-              <caret line="169" column="47" selection-start-line="169" selection-start-column="46" selection-end-line="169" selection-end-column="47" />
+            <state relative-caret-position="453">
+              <caret line="169" column="47" selection-start-line="169" selection-start-column="47" selection-end-line="169" selection-end-column="47" />
               <folding>
                 <element signature="e#1702#1749#0" expanded="false" />
               </folding>
@@ -289,21 +284,7 @@
       <workItem from="1470100158994" duration="15990000" />
       <workItem from="1470272073338" duration="2891000" />
       <workItem from="1470627338702" duration="999000" />
-      <workItem from="1470726477028" duration="69000" />
-    </task>
-    <task id="LOCAL-00017" summary="&#10;fg">
-      <created>1469926353140</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1469926353140</updated>
-    </task>
-    <task id="LOCAL-00018" summary="&#10;fg">
-      <created>1469926575298</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1469926575298</updated>
+      <workItem from="1470726477028" duration="850000" />
     </task>
     <task id="LOCAL-00019" summary="&#10;fg">
       <created>1469926759642</created>
@@ -634,15 +615,29 @@
       <option name="project" value="LOCAL" />
       <updated>1470132329145</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Added natural wake up - To be tested">
+      <created>1470726564233</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1470726564240</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Added natural wake up - To be tested">
+      <created>1470727115257</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1470727115257</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54862000" />
+    <option name="totallyTimeSpent" value="55643000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17935579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1157,8 +1152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="844">
-          <caret line="169" column="47" selection-start-line="169" selection-start-column="46" selection-end-line="169" selection-end-column="47" />
+        <state relative-caret-position="453">
+          <caret line="169" column="47" selection-start-line="169" selection-start-column="47" selection-end-line="169" selection-end-column="47" />
           <folding>
             <element signature="e#1702#1749#0" expanded="false" />
           </folding>
