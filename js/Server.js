@@ -117,20 +117,66 @@ function RGBStrip(mode, time, hex, brightness) {
         rgb.off()
     }
     if (mode == 1) {
-        runnning = true;
-        setInterval(function () {
-            console.log(hue);
-            hue = hue + 0.23529411764;
-            var hsl = tinycolor({h: hue, s: 100, v: 100});
-            console.log(hsl.toHex());
-            hex = hsl.toHex();
-            rgb.color(hex);
-            if (hue > 360) {
-                hue = 0
-            }
-        }, time / 1530000);
+        RGB = [255, 0, 0];
+        for (i = RGB[1]; i < 256; i++) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [1] = i
+            }, time / 6 / 255);
 
+        }
+        for (i = RGB[0]; i > 0; i--) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [0] = i
+            }, time / 6 / 255);
+
+        }
+        for (i = RGB[2]; i < 256; i++) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [2] = i
+            }, time / 6 / 255);
+
+        }
+        for (i = RGB[1]; i > 0; i--) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [1] = i
+            }, time / 6 / 255);
+
+        }
+        for (i = RGB[0]; i < 256; i++) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [0] = i
+            }, time / 6 / 255);
+
+        }
+        for (i = RGB[2]; i > 0; i--) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [2] = i
+            }, time / 6 / 255);
+
+        }
     }
+
+    //runnning = true;
+    //setInterval(function () {
+    //    console.log(hue);
+    //
+    //    hue = hue + 0.23529411764;
+    //    var hsl = tinycolor({h: hue, s: 100, v: 100});
+    //    console.log(hsl.toHex());
+    //    hex = hsl.toHex();
+    //    rgb.color(hex);
+    //    if (hue > 360) {
+    //        hue = 0
+    //    }
+    //}, time / 1530000);
+
+
     if (mode == 2) {
         rgb.color(hex)
     }
