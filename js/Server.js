@@ -116,7 +116,7 @@ function RGBStrip(mode, time, hex, brightness) {
     if (mode == 0) {
         rgb.off()
     }
-    while (mode == 1) {
+    if (mode == 1) {
         runnning = true;
         setInterval(function () {
             console.log(hue);
