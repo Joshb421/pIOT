@@ -112,6 +112,7 @@ var hue = 0;
 
 
 function RGBStrip(mode, time, hex, brightness) {
+    console.log("function called");
     if (mode == 0) {
         rgb.off()
     }
