@@ -59,7 +59,7 @@ var client = net.connect(options, function () {
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
             console.log("RGB LED initialized");
-            RGBStrip(1, 5000, null, 100);
+            RGBStrip(1, 30000, null, 100);
             //wakeUp([true, true, true, true, true, true, true], 20, d.getMinutes() + 1);
             //    //                    setInterval(function () {
             //    //                        var delay = greenDelay
@@ -125,7 +125,7 @@ function RGBStrip(mode, time, hex, brightness) {
             console.log(hsl.toHex());
             hex = hsl.toHex();
             rgb.color(hex);
-            if (hue >= 360) {
+            if (hue > 360) {
                 hue = 0
             }
         }, time / 1530000);
