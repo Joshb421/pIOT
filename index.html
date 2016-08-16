@@ -13,7 +13,7 @@
     <!-- default stylesheet -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script src="js/Webclient.js"></script>
+    <script src="js/web.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/jscolor.js"></script>
     <title>pIOT project</title>
@@ -26,7 +26,12 @@
         console.log(data);
         socket.emit('my other event', {my: 'data'});
     });
+    function reboot(){
+        document.body.style.backgroundColor = '#C10C05';
+        document.write("<h1>Reboot Imminent</h1><br>")
+    }
 </script>
+
 
 <body id="body">
 <h1>pIOT dashboard:</h1>
@@ -136,7 +141,7 @@
         <li>
             <div class="collapsible-header"><img src="ass/pi.png" alt="Smiley face" height="42" width="42" hspace="10">Local config</div>
             <div class="collapsible-body">
-            <a class="waves-effect waves-light btn">reboot</a>
+            <a class="waves-effect waves-light btn" onclick="reboot()">reboot</a>
             </div>
         </li>
     </ul>
