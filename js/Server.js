@@ -226,7 +226,7 @@ function wakeUp(days, hour, minute) {
 function piPower() {
     console.log('Raspberry pi rebooting');
     {
-        document.body.style.backgroundColor = '#C10C05';
-        document.write("<h1>Reboot Imminent</h1><br>")
+        require('reboot').rebootImmediately();
+       
     }
 }
