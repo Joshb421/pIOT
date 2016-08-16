@@ -27,12 +27,7 @@
         socket.emit('my other event', {my: 'data'});
     });
     function reboot(){
-        for(i=5; i>0; i--){
-            setTimeout(function(){
-               document.write(i) 
-            },1000)
-        }
-        document.body.style.backgroundColor = "C10C05";
+        document.body.style.backgroundColor = "red";
         document.write("<h1>Reboot Imminent</h1><br>")
     }
 </script>
