@@ -59,39 +59,40 @@ var client = net.connect(options, function () {
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
             console.log("RGB LED initialized");
-            wakeUp([true, true, true, true, true, true, true], 20, d.getMinutes() + 1);
-                //                    setInterval(function () {
-                //                        var delay = greenDelay
-                //                        setInterval(function () {
-                //                            if (change[1] > 0) {
-                //                                change[1] = change[1] - 1
-                //                                G++
-                //                                green.brightness(G)
-                //                            }
-                //                            else if (change[1] < 0) {
-                //                                change[1] = change[1] + 1
-                //                                G--
-                //                                green.brightness(G)
-                //                            }
-                //                            //console.log(G)
-                //                            // console.log(delay)
-                //                        }, delay)
-                //                    }, 5000);
-                //                    setInterval(function () {
-                //                        var delay = blueDelay
-                //                        setInterval(function () {
-                //                            if (change[2] > 0) {
-                //                                change[2] = change[2] - 1
-                //                                B++
-                //                                blue.brightness(B)
-                //                            }
-                //                            else if (change[2] < 0) {
-                //                                change[2] = change[2] + 1
-                //                                B--
-                //                                blue.brightness(B)
-                //                            }
-                //                            //console.log(delay)
-                //                        }, delay)
+            RGBStrip(1, 30000, null, 100);
+            //wakeUp([true, true, true, true, true, true, true], 20, d.getMinutes() + 1);
+            //    //                    setInterval(function () {
+            //    //                        var delay = greenDelay
+            //    //                        setInterval(function () {
+            //    //                            if (change[1] > 0) {
+            //    //                                change[1] = change[1] - 1
+            //    //                                G++
+            //    //                                green.brightness(G)
+            //    //                            }
+            //    //                            else if (change[1] < 0) {
+            //    //                                change[1] = change[1] + 1
+            //    //                                G--
+            //    //                                green.brightness(G)
+            //    //                            }
+            //    //                            //console.log(G)
+            //    //                            // console.log(delay)
+            //    //                        }, delay)
+            //    //                    }, 5000);
+            //    //                    setInterval(function () {
+            //    //                        var delay = blueDelay
+            //    //                        setInterval(function () {
+            //    //                            if (change[2] > 0) {
+            //    //                                change[2] = change[2] - 1
+            //    //                                B++
+            //    //                                blue.brightness(B)
+            //    //                            }
+            //    //                            else if (change[2] < 0) {
+            //    //                                change[2] = change[2] + 1
+            //    //                                B--
+            //    //                                blue.brightness(B)
+            //    //                            }
+            //    //                            //console.log(delay)
+            //    //                        }, delay)
         });
     });
 });
@@ -111,31 +112,77 @@ var hue = 0;
 
 
 function RGBStrip(mode, time, hex, brightness) {
-    rgb.intensity(brightness);
+    console.log("function called");
     if (mode == 0) {
         rgb.off()
     }
-    while (mode == 1) {
-        runnning = true;
-        setInterval(function () {
-            console.log(hue);
-            hue = hue + 0.23529411764;
-            var hsl = tinycolor({h: hue, s: 100, v: 100});
-            console.log(hsl.toHex());
-            hex = hsl.toHex();
-            rgb.color(hex);
-            if (hue >= 360) {
-                hue = 0
-            }
-        }, time / 1530000);
+    if (mode == 1) {
+        RGB = [255, 0, 0];
+        for (RGB[1]; RGB[1] < 256; RGB[1]++) {
+            console.log(RGB[1])
+            setTimeout(function () {
+                console.log(RGB);
+            }, time / 6 / 255);
 
+        }
+        for (i = RGB[0]; i > 0; i--) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [0] = i
+            }, time / 6 / 255);
+
+        }
+        for (i = RGB[2]; i < 256; i++) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [2] = i
+            }, time / 6 / 255);
+
+        }
+        for (i = RGB[1]; i > 0; i--) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [1] = i
+            }, time / 6 / 255);
+
+        }
+        for (i = RGB[0]; i < 256; i++) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [0] = i
+            }, time / 6 / 255);
+
+        }
+        for (i = RGB[2]; i > 0; i--) {
+            setTimeout(function () {
+                console.log(RGB);
+                RGB [2] = i
+            }, time / 6 / 255);
+
+        }
     }
+
+    //runnning = true;
+    //setInterval(function () {
+    //    console.log(hue);
+    //
+    //    hue = hue + 0.23529411764;
+    //    var hsl = tinycolor({h: hue, s: 100, v: 100});
+    //    console.log(hsl.toHex());
+    //    hex = hsl.toHex();
+    //    rgb.color(hex);
+    //    if (hue > 360) {
+    //        hue = 0
+    //    }
+    //}, time / 1530000);
+
+
     if (mode == 2) {
         rgb.color(hex)
     }
 }
 
-var delay
+var delay;
 function wakeUp(days, hour, minute) {
     var target = (hour * 3600000 ) + (minute * 60000);
     var enableTime = (d.getHours() * 3600000) + (d.getMinutes() * 60000);
@@ -179,7 +226,7 @@ function wakeUp(days, hour, minute) {
 function piPower() {
     console.log('Raspberry pi rebooting');
     {
-        document.body.style.backgroundColor = '#C10C05';
-        document.write("<h1>Reboot Imminent</h1><br>")
+        require('reboot').rebootImmediately();
+       
     }
 }
