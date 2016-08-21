@@ -59,8 +59,8 @@ var client = net.connect(options, function () {
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
             console.log("RGB LED initialized");
-            RGBStrip(30000, null, 100);
             mode = 1;
+            RGBStrip(30000, null, 100);
             //wakeUp([true, true, true, true, true, true, true], 20, d.getMinutes() + 1);
             //    //                    setInterval(function () {
             //    //                        var delay = greenDelay
@@ -118,6 +118,7 @@ function RGBStrip(time, hex, brightness) {
         rgb.off()
     }
     if (mode == 1) {
+        console.log("Calling HSV Crossfade")
         RGBCrossfade(time);
         setInterval(function () {
             if (mode == 1) {
@@ -183,6 +184,7 @@ function piPower() {
 }
 
 function RGBCrossfade(time) {
+    console.log("Starting HSV crossfade")
     RGB = [255, 0, 0];
 
     setTimeout(function () {
