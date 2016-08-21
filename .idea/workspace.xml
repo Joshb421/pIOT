@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e5397ff-d3fe-4342-8709-a434cd074dfc" name="Default" comment="h">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Server.js" afterPath="$PROJECT_DIR$/js/Server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pIOT.iws" />
@@ -615,7 +614,13 @@
       <option name="project" value="LOCAL" />
       <updated>1471762599455</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="h">
+      <created>1471762611435</created>
+      <option name="number" value="00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1471762611436</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
