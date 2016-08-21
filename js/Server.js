@@ -12,7 +12,7 @@ var io = require('socket.io')(app);
 app.listen(69);
 var d = new Date();
 var shell = require('shelljs/global');
-
+var mode = 0
 
 
 function handler(req, res) {
@@ -59,7 +59,8 @@ var client = net.connect(options, function () {
             status.on();
             rgb = new five.Led.RGB([12, 13, 15]);
             console.log("RGB LED initialized");
-            RGBStrip(1, 30000, null, 100);
+            RGBStrip(30000, null, 100);
+            mode = 1;
             //wakeUp([true, true, true, true, true, true, true], 20, d.getMinutes() + 1);
             //    //                    setInterval(function () {
             //    //                        var delay = greenDelay
@@ -111,13 +112,18 @@ var RGB = [0, 0, 0];
 var hue = 0;
 
 
-function RGBStrip(mode, time, hex, brightness) {
+function RGBStrip(time, hex, brightness) {
     console.log("function called");
     if (mode == 0) {
         rgb.off()
     }
     if (mode == 1) {
         RGBCrossfade(time);
+        setInterval(function () {
+            if (mode == 1) {
+                RGBCrossfade(time);
+            }
+        }, time)
     }
 
 
