@@ -117,10 +117,10 @@ function RGBStrip(mode, time, hex, brightness) {
         rgb.off()
     }
     if (mode == 1) {
-        while (RGBCrossfade() = !true) {
+        while (RGBCrossfade(time) = !true) {
 
         }
-        while (RGBCrossfade() = !true) {
+        while (RGBCrossfade(time) = !true) {
 
         }
     }
@@ -181,7 +181,7 @@ function piPower() {
     }
 }
 
-function RGBCrossfade() {
+function RGBCrossfade(time) {
     RGB = [255, 0, 0];
 
     setTimeout(function () {
