@@ -121,19 +121,28 @@ function RGBStrip(mode, time, hex, brightness) {
         myLoop1();
         setTimeout(function () {
             myLoop2()
-        }, time / 6);
-        setTimeout(function () {
-            myLoop3()
-        }, time / 6);
-        setTimeout(function () {
-            myLoop4()
-        }, time / 6);
-        setTimeout(function () {
-            myLoop5()
-        }, time / 6);
+            setTimeout(function () {
+                myLoop3()
+                setTimeout(function () {
+                    myLoop4()
+                    setTimeout(function () {
+                        myLoop5()
+                        setTimeout(function () {
+                            myLoop4()
+                            setTimeout(function () {
+                                myLoop5()
+                            }, time / 6 + 1);
+                        }, time / 6 + 1);
+                    }, time / 6 + 1);
+                }, time / 6 + 1);
+            }, time / 6 + 1);
+        }, time / 6 + 1);
+
+
+
         setTimeout(function () {
             myLoop6()
-        }, time / 6);
+        }, time / 6 + 1);
         //for (RGB[1]; RGB[1] < 256; RGB[1]++) {
         //    console.log(RGB[1])
         //    setTimeout(function () {
