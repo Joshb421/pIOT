@@ -119,6 +119,7 @@ function RGBStrip(mode, time, hex, brightness) {
     if (mode == 1) {
         RGB = [255, 0, 0];
         myLoop1();
+        setTimeout(myLoop2(), time / 6);
         //for (RGB[1]; RGB[1] < 256; RGB[1]++) {
         //    console.log(RGB[1])
         //    setTimeout(function () {
@@ -133,10 +134,7 @@ function RGBStrip(mode, time, hex, brightness) {
                 if (RGB[1] < 256) {            //  if the counter < 10, call the loop function
                     myLoop1();             //  ..  again which will trigger another
                 }
-                else if (RGB[1] > 256) {
-                    myLoop1();
-                    myLoop2();
-                }
+
             }, time / 6 / 255)
         }
 
