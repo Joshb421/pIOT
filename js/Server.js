@@ -131,9 +131,7 @@ function RGBStrip(mode, time, hex, brightness) {
             }, time / 6 / 255)
         }
 
-    )
         (255);
-        }
         for (i = RGB[0]; i > 0; i--) {
             setTimeout(function () {
                 console.log(RGB);
