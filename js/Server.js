@@ -122,6 +122,18 @@ function RGBStrip(mode, time, hex, brightness) {
         setTimeout(function () {
             myLoop2()
         }, time / 6);
+        setTimeout(function () {
+            myLoop3()
+        }, time / 6);
+        setTimeout(function () {
+            myLoop4()
+        }, time / 6);
+        setTimeout(function () {
+            myLoop5()
+        }, time / 6);
+        setTimeout(function () {
+            myLoop6()
+        }, time / 6);
         //for (RGB[1]; RGB[1] < 256; RGB[1]++) {
         //    console.log(RGB[1])
         //    setTimeout(function () {
@@ -151,26 +163,52 @@ function RGBStrip(mode, time, hex, brightness) {
             }, time / 6 / 255)
         }
 
-        //for (i = RGB[0]; i > 0; i--) {
-        //    setTimeout(function () {
-        //        console.log(RGB);
-        //        RGB [0] = i
-        //    }, time / 6 / 255);
-        //
-        //}
-        //for (i = RGB[2]; i < 256; i++) {
-        //    setTimeout(function () {
-        //        console.log(RGB);
-        //        RGB [2] = i
-        //    }, time / 6 / 255);
-        //
-        //}
-        //for (i = RGB[1]; i > 0; i--) {
-        //    setTimeout(function () {
-        //        console.log(RGB);
-        //        RGB [1] = i
-        //    }, time / 6 / 255);
-        //
+        function myLoop3() {           //  create a loop function
+            setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+                RGB[2]++;                     //  increment the counter
+                rgb.color(RGB);
+                console.log(RGB[2]);
+                if (RGB[2] < 256) {            //  if the counter < 10, call the loop function
+                    myLoop3();             //  ..  again which will trigger another
+                }
+
+            }, time / 6 / 255)
+        }
+
+        function myLoop4() {           //  create a loop function
+            setTimeout(function () {
+                rgb.color(RGB);//  call a 3s setTimeout when the loop is called
+                RGB[1]--;                     //  increment the counter
+                console.log(RGB[1]);
+                if (RGB[1] > 0) {            //  if the counter < 10, call the loop function
+                    myLoop4();             //  ..  again which will trigger another
+                }                        //  ..  setTimeout()
+            }, time / 6 / 255)
+        }
+
+        function myLoop5() {           //  create a loop function
+            setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+                RGB[0]++;                     //  increment the counter
+                rgb.color(RGB);
+                console.log(RGB[0]);
+                if (RGB[0] < 256) {            //  if the counter < 10, call the loop function
+                    myLoop5();             //  ..  again which will trigger another
+                }
+
+            }, time / 6 / 255)
+        }
+
+        function myLoop6() {           //  create a loop function
+            setTimeout(function () {
+                rgb.color(RGB);//  call a 3s setTimeout when the loop is called
+                RGB[2]--;                     //  increment the counter
+                console.log(RGB[2]);
+                if (RGB[2] > 0) {            //  if the counter < 10, call the loop function
+                    myLoop6();             //  ..  again which will trigger another
+                }                        //  ..  setTimeout()
+            }, time / 6 / 255)
+        }
+
         //}
         //for (i = RGB[0]; i < 256; i++) {
         //    setTimeout(function () {
@@ -188,19 +226,6 @@ function RGBStrip(mode, time, hex, brightness) {
         //}
     }
 
-    //runnning = true;
-    //setInterval(function () {
-    //    console.log(hue);
-    //
-    //    hue = hue + 0.23529411764;
-    //    var hsl = tinycolor({h: hue, s: 100, v: 100});
-    //    console.log(hsl.toHex());
-    //    hex = hsl.toHex();
-    //    rgb.color(hex);
-    //    if (hue > 360) {
-    //        hue = 0
-    //    }
-    //}, time / 1530000);
 
 
     if (mode == 2) {
