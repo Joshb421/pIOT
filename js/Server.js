@@ -128,10 +128,7 @@ function RGBStrip(mode, time, hex, brightness) {
                     setTimeout(function () {
                         myLoop5()
                         setTimeout(function () {
-                            myLoop4()
-                            setTimeout(function () {
-                                myLoop5()
-                            }, time / 6 + 1);
+                            myLoop6()
                         }, time / 6 + 1);
                     }, time / 6 + 1);
                 }, time / 6 + 1);

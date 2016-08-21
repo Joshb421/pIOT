@@ -43,8 +43,8 @@
       <file leaf-file-name="Server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46354732" vertical-offset="1597" max-vertical-offset="5066">
-              <caret line="119" column="26" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.79651797" vertical-offset="1580" max-vertical-offset="5015">
+              <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -675,7 +675,13 @@
       <option name="project" value="LOCAL" />
       <updated>1471763387881</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="h">
+      <created>1471763563913</created>
+      <option name="number" value="00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1471763563913</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1162,8 +1168,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46354732" vertical-offset="1597" max-vertical-offset="5066">
-          <caret line="119" column="26" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.79651797" vertical-offset="1580" max-vertical-offset="5015">
+          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding />
         </state>
       </provider>
