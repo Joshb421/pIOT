@@ -117,119 +117,12 @@ function RGBStrip(mode, time, hex, brightness) {
         rgb.off()
     }
     if (mode == 1) {
-        RGB = [255, 0, 0];
-        myLoop1();
-        setTimeout(function () {
-            myLoop2()
-            setTimeout(function () {
-                myLoop3()
-                setTimeout(function () {
-                    myLoop4()
-                    setTimeout(function () {
-                        myLoop5()
-                        setTimeout(function () {
-                            myLoop6()
-                        }, time / 6 + 1);
-                    }, time / 6 + 1);
-                }, time / 6 + 1);
-            }, time / 6 + 1);
-        }, time / 6 + 1);
+        while (RGBCrossfade() = !true) {
 
-
-
-        setTimeout(function () {
-            myLoop6()
-        }, time / 6 + 1);
-        //for (RGB[1]; RGB[1] < 256; RGB[1]++) {
-        //    console.log(RGB[1])
-        //    setTimeout(function () {
-        //        console.log(RGB);
-        //    }, time / 6 / 255);
-        //
-        function myLoop1() {           //  create a loop function
-            setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-                RGB[1]++;                     //  increment the counter
-                rgb.color(RGB);
-                console.log(RGB[1]);
-                if (RGB[1] < 256) {            //  if the counter < 10, call the loop function
-                    myLoop1();             //  ..  again which will trigger another
-                }
-
-            }, time / 6 / 255)
         }
+        while (RGBCrossfade() = !true) {
 
-        function myLoop2() {           //  create a loop function
-            setTimeout(function () {
-                rgb.color(RGB);//  call a 3s setTimeout when the loop is called
-                RGB[0]--;                     //  increment the counter
-                console.log(RGB[0]);
-                if (RGB[0] > 0) {            //  if the counter < 10, call the loop function
-                    myLoop2();             //  ..  again which will trigger another
-                }                        //  ..  setTimeout()
-            }, time / 6 / 255)
         }
-
-        function myLoop3() {           //  create a loop function
-            setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-                RGB[2]++;                     //  increment the counter
-                rgb.color(RGB);
-                console.log(RGB[2]);
-                if (RGB[2] < 256) {            //  if the counter < 10, call the loop function
-                    myLoop3();             //  ..  again which will trigger another
-                }
-
-            }, time / 6 / 255)
-        }
-
-        function myLoop4() {           //  create a loop function
-            setTimeout(function () {
-                rgb.color(RGB);//  call a 3s setTimeout when the loop is called
-                RGB[1]--;                     //  increment the counter
-                console.log(RGB[1]);
-                if (RGB[1] > 0) {            //  if the counter < 10, call the loop function
-                    myLoop4();             //  ..  again which will trigger another
-                }                        //  ..  setTimeout()
-            }, time / 6 / 255)
-        }
-
-        function myLoop5() {           //  create a loop function
-            setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-                RGB[0]++;                     //  increment the counter
-                rgb.color(RGB);
-                console.log(RGB[0]);
-                if (RGB[0] < 256) {            //  if the counter < 10, call the loop function
-                    myLoop5();             //  ..  again which will trigger another
-                }
-
-            }, time / 6 / 255)
-        }
-
-        function myLoop6() {           //  create a loop function
-            setTimeout(function () {
-                rgb.color(RGB);//  call a 3s setTimeout when the loop is called
-                RGB[2]--;                     //  increment the counter
-                console.log(RGB[2]);
-                if (RGB[2] > 0) {            //  if the counter < 10, call the loop function
-                    myLoop6();             //  ..  again which will trigger another
-                }                        //  ..  setTimeout()
-            }, time / 6 / 255)
-        }
-
-        //}
-        //for (i = RGB[0]; i < 256; i++) {
-        //    setTimeout(function () {
-        //        console.log(RGB);
-        //        RGB [0] = i
-        //    }, time / 6 / 255);
-        //
-        //}
-        //for (i = RGB[2]; i > 0; i--) {
-        //    setTimeout(function () {
-        //        console.log(RGB);
-        //        RGB [2] = i
-        //    }, time / 6 / 255);
-        //
-        //}
     }
 
 
@@ -286,4 +179,119 @@ function piPower() {
         require('reboot').rebootImmediately();
        
     }
+}
+
+function RGBCrossfade() {
+    RGB = [255, 0, 0];
+
+    setTimeout(function () {
+        myLoop2();
+        setTimeout(function () {
+            myLoop3();
+            setTimeout(function () {
+                myLoop4();
+                setTimeout(function () {
+                    myLoop5();
+                    setTimeout(function () {
+                        myLoop6()
+                    }, time / 6 + 1);
+                }, time / 6 + 1);
+            }, time / 6 + 1);
+        }, time / 6 + 1);
+    }, time / 6 + 1);
+
+
+    setTimeout(function () {
+        myLoop6()
+    }, time / 6 + 1);
+    //for (RGB[1]; RGB[1] < 256; RGB[1]++) {
+    //    console.log(RGB[1])
+    //    setTimeout(function () {
+    //        console.log(RGB);
+    //    }, time / 6 / 255);
+    //
+    function myLoop1() {           //  create a loop function
+        setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+            RGB[1]++;                     //  increment the counter
+            rgb.color(RGB);
+            console.log(RGB[1]);
+            if (RGB[1] < 256) {            //  if the counter < 10, call the loop function
+                myLoop1();             //  ..  again which will trigger another
+            }
+
+        }, time / 6 / 255)
+    }
+
+    function myLoop2() {           //  create a loop function
+        setTimeout(function () {
+            rgb.color(RGB);//  call a 3s setTimeout when the loop is called
+            RGB[0]--;                     //  increment the counter
+            console.log(RGB[0]);
+            if (RGB[0] > 0) {            //  if the counter < 10, call the loop function
+                myLoop2();             //  ..  again which will trigger another
+            }                        //  ..  setTimeout()
+        }, time / 6 / 255)
+    }
+
+    function myLoop3() {           //  create a loop function
+        setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+            RGB[2]++;                     //  increment the counter
+            rgb.color(RGB);
+            console.log(RGB[2]);
+            if (RGB[2] < 256) {            //  if the counter < 10, call the loop function
+                myLoop3();             //  ..  again which will trigger another
+            }
+
+        }, time / 6 / 255)
+    }
+
+    function myLoop4() {           //  create a loop function
+        setTimeout(function () {
+            rgb.color(RGB);//  call a 3s setTimeout when the loop is called
+            RGB[1]--;                     //  increment the counter
+            console.log(RGB[1]);
+            if (RGB[1] > 0) {            //  if the counter < 10, call the loop function
+                myLoop4();             //  ..  again which will trigger another
+            }                        //  ..  setTimeout()
+        }, time / 6 / 255)
+    }
+
+    function myLoop5() {           //  create a loop function
+        setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+            RGB[0]++;                     //  increment the counter
+            rgb.color(RGB);
+            console.log(RGB[0]);
+            if (RGB[0] < 256) {            //  if the counter < 10, call the loop function
+                myLoop5();             //  ..  again which will trigger another
+            }
+
+        }, time / 6 / 255)
+    }
+
+    function myLoop6() {           //  create a loop function
+        setTimeout(function () {
+            rgb.color(RGB);//  call a 3s setTimeout when the loop is called
+            RGB[2]--;                     //  increment the counter
+            console.log(RGB[2]);
+            if (RGB[2] > 0) {            //  if the counter < 10, call the loop function
+                myLoop6();             //  ..  again which will trigger another
+            }                        //  ..  setTimeout()
+        }, time / 6 / 255)
+    }
+
+    return true
+    //}
+    //for (i = RGB[0]; i < 256; i++) {
+    //    setTimeout(function () {
+    //        console.log(RGB);
+    //        RGB [0] = i
+    //    }, time / 6 / 255);
+    //
+    //}
+    //for (i = RGB[2]; i > 0; i--) {
+    //    setTimeout(function () {
+    //        console.log(RGB);
+    //        RGB [2] = i
+    //    }, time / 6 / 255);
+    //
 }
