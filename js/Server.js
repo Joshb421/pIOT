@@ -60,7 +60,7 @@ var client = net.connect(options, function () {
             rgb = new five.Led.RGB([12, 13, 15]);
             console.log("RGB LED initialized");
             mode = 1;
-            RGBStrip(30000, null, 100);
+            RGBStrip(5000, null, 100);
             //wakeUp([true, true, true, true, true, true, true], 20, d.getMinutes() + 1);
             //    //                    setInterval(function () {
             //    //                        var delay = greenDelay
