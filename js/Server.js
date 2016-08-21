@@ -127,7 +127,6 @@ function RGBStrip(mode, time, hex, brightness) {
         //
         function myLoop() {           //  create a loop function
             setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-                alert('hello');          //  your code here
                 RGB[1]++;                     //  increment the counter
                 console.log(RGB[1])
                 if (RGB[1] < 255) {            //  if the counter < 10, call the loop function
