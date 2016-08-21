@@ -118,19 +118,31 @@ function RGBStrip(mode, time, hex, brightness) {
     }
     if (mode == 1) {
         RGB = [255, 0, 0];
-        myLoop();
+        myLoop1();
         //for (RGB[1]; RGB[1] < 256; RGB[1]++) {
         //    console.log(RGB[1])
         //    setTimeout(function () {
         //        console.log(RGB);
         //    }, time / 6 / 255);
         //
-        function myLoop() {           //  create a loop function
+        function myLoop1() {           //  create a loop function
             setTimeout(function () {    //  call a 3s setTimeout when the loop is called
                 RGB[1]++;                     //  increment the counter
-                console.log(RGB[1])
+                rgb.color(RGB);
+                console.log(RGB[1]);
                 if (RGB[1] < 255) {            //  if the counter < 10, call the loop function
-                    myLoop();             //  ..  again which will trigger another
+                    myLoop1();             //  ..  again which will trigger another
+                }                        //  ..  setTimeout()
+            }, time / 6 / 255)
+        }
+
+        function myLoop2() {           //  create a loop function
+            setTimeout(function () {
+                rgb.color(RGB);//  call a 3s setTimeout when the loop is called
+                RGB[0]--;                     //  increment the counter
+                console.log(RGB[0]);
+                if (RGB[0] > 0) {            //  if the counter < 10, call the loop function
+                    myLoop2();             //  ..  again which will trigger another
                 }                        //  ..  setTimeout()
             }, time / 6 / 255)
         }
