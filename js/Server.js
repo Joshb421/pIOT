@@ -117,12 +117,7 @@ function RGBStrip(mode, time, hex, brightness) {
         rgb.off()
     }
     if (mode == 1) {
-        while (RGBCrossfade(time) = !true) {
-
-        }
-        while (RGBCrossfade(time) = !true) {
-
-        }
+        RGBCrossfade(time);
     }
 
 
