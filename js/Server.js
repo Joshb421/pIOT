@@ -118,55 +118,59 @@ function RGBStrip(mode, time, hex, brightness) {
     }
     if (mode == 1) {
         RGB = [255, 0, 0];
+        myLoop();
         //for (RGB[1]; RGB[1] < 256; RGB[1]++) {
         //    console.log(RGB[1])
         //    setTimeout(function () {
         //        console.log(RGB);
         //    }, time / 6 / 255);
         //
-        function myLoop(i) {
-            setTimeout(function () {
-                if (--i) myLoop(i);
-                RGB[1] = i
+        function myLoop() {           //  create a loop function
+            setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+                alert('hello');          //  your code here
+                RGB[1]++;                     //  increment the counter
+                console.log(RGB[1])
+                if (RGB[1] < 255) {            //  if the counter < 10, call the loop function
+                    myLoop();             //  ..  again which will trigger another
+                }                        //  ..  setTimeout()
             }, time / 6 / 255)
         }
 
-        (255);
-        for (i = RGB[0]; i > 0; i--) {
-            setTimeout(function () {
-                console.log(RGB);
-                RGB [0] = i
-            }, time / 6 / 255);
-
-        }
-        for (i = RGB[2]; i < 256; i++) {
-            setTimeout(function () {
-                console.log(RGB);
-                RGB [2] = i
-            }, time / 6 / 255);
-
-        }
-        for (i = RGB[1]; i > 0; i--) {
-            setTimeout(function () {
-                console.log(RGB);
-                RGB [1] = i
-            }, time / 6 / 255);
-
-        }
-        for (i = RGB[0]; i < 256; i++) {
-            setTimeout(function () {
-                console.log(RGB);
-                RGB [0] = i
-            }, time / 6 / 255);
-
-        }
-        for (i = RGB[2]; i > 0; i--) {
-            setTimeout(function () {
-                console.log(RGB);
-                RGB [2] = i
-            }, time / 6 / 255);
-
-        }
+        //for (i = RGB[0]; i > 0; i--) {
+        //    setTimeout(function () {
+        //        console.log(RGB);
+        //        RGB [0] = i
+        //    }, time / 6 / 255);
+        //
+        //}
+        //for (i = RGB[2]; i < 256; i++) {
+        //    setTimeout(function () {
+        //        console.log(RGB);
+        //        RGB [2] = i
+        //    }, time / 6 / 255);
+        //
+        //}
+        //for (i = RGB[1]; i > 0; i--) {
+        //    setTimeout(function () {
+        //        console.log(RGB);
+        //        RGB [1] = i
+        //    }, time / 6 / 255);
+        //
+        //}
+        //for (i = RGB[0]; i < 256; i++) {
+        //    setTimeout(function () {
+        //        console.log(RGB);
+        //        RGB [0] = i
+        //    }, time / 6 / 255);
+        //
+        //}
+        //for (i = RGB[2]; i > 0; i--) {
+        //    setTimeout(function () {
+        //        console.log(RGB);
+        //        RGB [2] = i
+        //    }, time / 6 / 255);
+        //
+        //}
     }
 
     //runnning = true;
