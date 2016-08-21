@@ -133,8 +133,9 @@ function RGBStrip(mode, time, hex, brightness) {
                 if (RGB[1] < 256) {            //  if the counter < 10, call the loop function
                     myLoop1();             //  ..  again which will trigger another
                 }
-                else if (RGB[1] === 255) {
-                    myLoop2()
+                else if (RGB[1] > 256) {
+                    myLoop1();
+                    myLoop2();
                 }
             }, time / 6 / 255)
         }
